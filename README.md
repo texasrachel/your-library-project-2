@@ -1,5 +1,5 @@
 
-# your library app project
+# your library app
 
 ## Project Name
 
@@ -10,20 +10,20 @@ your library
 your library is an app for tracking your personal library catalog. It is built on [React](https://reactjs.org/) with an [Airtable](https://airtable.com/tblzoNbKubApA62S9) database. The user will have the option of cataloging books, audiobooks, and ebooks. Inputting new media will be accomplished through a separately linked page. The catalog list can be displayed in its entirety or filtered by author, user inputted subject, type, or status. Selecting an item will lead to an individual page displaying information about the media as well as have space for user inputted 'thoughts'.
 
 ## Wireframes
-  ![wireframe of desktop site](ttps://res.cloudinary.com/texasrachel/image/upload/v1629482001/your-library-wireframe-desktop.png)
+
+  ![wireframe of desktop site](https://res.cloudinary.com/texasrachel/image/upload/v1629482001/your-library-wireframe-desktop.png)
 
 ![wireframe of mobile site](https://res.cloudinary.com/texasrachel/image/upload/v1629482148/your-library-wireframe-mobile.png)
   
 ## Component Hierarchy
 
-![enter image description here](https://res.cloudinary.com/texasrachel/image/upload/v1629484654/your-library-hierarchy.png)
+![component hierarchy display](https://res.cloudinary.com/texasrachel/image/upload/v1629484654/your-library-hierarchy.png)
 
 ## API and Data Sample
 
 [Airtable](https://airtable.com/tblzoNbKubApA62S9) API snippet
 
 ```json
-
 {
 	"catalog": [
 	{
@@ -81,7 +81,7 @@ your library is an app for tracking your personal library catalog. It is built o
 	- [ ] add photo
 	- [ ] ability to edit
 	- [ ] ability to delete
-![enter image description here](https://res.cloudinary.com/texasrachel/image/upload/v1629472022/your-library-wireframe-post-mvp.png)
+![wireframe of Post MVP](https://res.cloudinary.com/texasrachel/image/upload/v1629472022/your-library-wireframe-post-mvp.png)
 
 ## Project Schedule
 
@@ -89,7 +89,7 @@ your library is an app for tracking your personal library catalog. It is built o
 |:--:|:--:|:--:|
 | August 19 | Prompt / Wireframes / Airtable API / GitHub | Yes |
 | August 20 | Hierarchy / Readme / Project Approval | Yes  |
-| August 21 | Core Application Structure - HTML, CSS / Pseudocode | |
+| August 21 | Core Application Structure - HTML, CSS / Pseudocode / React App | |
 | August 22 | Components / Axios integration |  |
 | August 23 | Responsive & CSS Styling / Deploy to Netlify | |
 | August 24 | MVP |  |
