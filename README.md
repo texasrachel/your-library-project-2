@@ -1,18 +1,18 @@
 
-# your-library app project
+# your library app project
 
 ## Project Name
 
-your-library
+your library
 
 ## Project Description
 
-your library is an app for tracking your personal library catalog. It is built on [React](https://reactjs.org/) with an [Airtable](https://airtable.com/tblzoNbKubApA62S9) database. Users will have the option of cataloging books, audiobooks, and ebooks. A page for inputting new media into the catalog will be ==provided/available==. The list of media can be displayed in its entirety or filtered by author, title, user-inputted subject, type, and status. Selecting a listed media will lead to an individual pages displaying information about the chosen media as well as have space for user inputted 'thoughts'.
+your library is an app for tracking your personal library catalog. It is built on [React](https://reactjs.org/) with an [Airtable](https://airtable.com/tblzoNbKubApA62S9) database. The user will have the option of cataloging books, audiobooks, and ebooks. Inputting new media will be accomplished through a separately linked page. The catalog list can be displayed in its entirety or filtered by author, user inputted subject, type, or status. Selecting a listed media will lead to an individual page displaying information about the chosen item as well as have space for user inputted 'thoughts' storage.
 
 ## Wireframes
-  ![wireframe of desktop site](https://res.cloudinary.com/texasrachel/image/upload/v1629472022/your-library-wireframe-desktop_a8bsd6.png)
+  ![wireframe of desktop site](https://res.cloudinary.com/texasrachel/image/upload/v1629482001/your-library-wireframe-desktop.png)
 
-![wireframe of mobile site](https://res.cloudinary.com/texasrachel/image/upload/v1629472022/your-library-wireframe-mobile_oyhwqj.png)
+![wireframe of mobile site](https://res.cloudinary.com/texasrachel/image/upload/v1629482148/your-library-wireframe-mobile.png)
   
 ## Component Hierarchy
 
