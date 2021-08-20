@@ -7,10 +7,10 @@ your library
 
 ## Project Description
 
-your library is an app for tracking your personal library catalog. It is built on [React](https://reactjs.org/) with an [Airtable](https://airtable.com/tblzoNbKubApA62S9) database. The user will have the option of cataloging books, audiobooks, and ebooks. Inputting new media will be accomplished through a separately linked page. The catalog list can be displayed in its entirety or filtered by author, user inputted subject, type, or status. Selecting a listed media will lead to an individual page displaying information about the chosen item as well as have space for user inputted 'thoughts' storage.
+your library is an app for tracking your personal library catalog. It is built on [React](https://reactjs.org/) with an [Airtable](https://airtable.com/tblzoNbKubApA62S9) database. The user will have the option of cataloging books, audiobooks, and ebooks. Inputting new media will be accomplished through a separately linked page. The catalog list can be displayed in its entirety or filtered by author, user inputted subject, type, or status. Selecting an item will lead to an individual page displaying information about the media as well as have space for user inputted 'thoughts'.
 
 ## Wireframes
-  ![wireframe of desktop site](https://res.cloudinary.com/texasrachel/image/upload/v1629482001/your-library-wireframe-desktop.png)
+  ![wireframe of desktop site](ttps://res.cloudinary.com/texasrachel/image/upload/v1629482001/your-library-wireframe-desktop.png)
 
 ![wireframe of mobile site](https://res.cloudinary.com/texasrachel/image/upload/v1629482148/your-library-wireframe-mobile.png)
   
@@ -54,8 +54,6 @@ your library is an app for tracking your personal library catalog. It is built o
 
 ### MVP/PostMVP
 
-The functionality will then be divided into two separate lists: MVP and PostMVP. Carefully decide what is placed into your MVP, as the client will expect this functionality to be implemented upon project completion.
-
 #### MVP
 
 - [ ] Navigation component with links for other components <!--(component 1) -->
@@ -67,7 +65,8 @@ The functionality will then be divided into two separate lists: MVP and PostMVP.
 	<!-- what to do about multiple returns - if...indiv...else...catalog?filtered? -->
 - [ ] Component to add media to catalog  <!--(axios post & component 6) -->
 - [ ] Component to add thoughts to individual pages which can be accessed on the individual media page or the add media page <!--(axios put & component 7) -->
-- [ ] Reactive for mobile
+- [ ] Responsive for mobile
+- [ ] Deployed to Netlify
 
 #### PostMVP
 
@@ -89,7 +88,7 @@ The functionality will then be divided into two separate lists: MVP and PostMVP.
 | Day | Deliverable | Completed? |
 |:--:|:--:|:--:|
 | August 19 | Prompt / Wireframes / Airtable API / GitHub | Yes |
-| August 20 | Hierarchy / Readme / Project Approval |  |
+| August 20 | Hierarchy / Readme / Project Approval | Yes  |
 | August 21 | Core Application Structure - HTML, CSS / Pseudocode | |
 | August 22 | Components / Axios integration |  |
 | August 23 | Responsive & CSS Styling / Deploy to Netlify | |
