@@ -86,17 +86,17 @@ The functionality will then be divided into two separate lists: MVP and PostMVP.
 
 ## Project Schedule
 
-| Day | Deliverable | Status |
+| Day | Deliverable | Completed? |
 |:--:|:--:|:--:|
-| August 19 | Prompt / Wireframes / Airtable API / GitHub | Complete |
-| August 20 | Hierarchy / Readme / Project Approval | Incomplete/Complete |
-| August 21 | Core Application Structure - HTML, CSS / Pseudocode | Incomplete/Complete |
-| August 22 | Components / Axios integration | Incomplete/Complete |
-| August 23 | Responsive & CSS Styling / Deploy to Netlify | Incomplete/Complete |
-| August 24 | MVP | Incomplete/Complete |
-| August 25 | Debugging | Incomplete/Complete |
-| August 26 | Clean-up Code | Incomplete/Complete |
-| August 27 | Presentations | Incomplete/Complete |
+| August 19 | Prompt / Wireframes / Airtable API / GitHub | Yes |
+| August 20 | Hierarchy / Readme / Project Approval |  |
+| August 21 | Core Application Structure - HTML, CSS / Pseudocode | |
+| August 22 | Components / Axios integration |  |
+| August 23 | Responsive & CSS Styling / Deploy to Netlify | |
+| August 24 | MVP |  |
+| August 25 | Debugging |  |
+| August 26 | Clean-up Code |  |
+| August 27 | Presentations |  |
 
 ## Timeframes
   
