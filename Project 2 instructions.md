@@ -211,3 +211,63 @@ https://upmostly.com/tutorials/pass-a-parameter-through-onclick-in-react
 
 https://upmostly.com/tutorials/react-onclick-event-handling-with-examples
 
+
+
+<img src="/Users/rachel/Desktop/GeneralAssembly/Chickadee/Unit2/your-library-project-2/images/Screen Shot 2020-09-13 at 6.18.44 PM.png" alt="Screen Shot 2020-09-13 at 6.18.44 PM" style="zoom:50%;" />
+
+
+
+<img src="/Users/rachel/Desktop/GeneralAssembly/Chickadee/Unit2/your-library-project-2/images/113086567-7bf2ae80-91a7-11eb-8d26-affaff3e02a6.png" alt="113086567-7bf2ae80-91a7-11eb-8d26-affaff3e02a6" style="zoom:50%;" />
+
+
+
+## Component Breakdown
+
+| Component          | Type       | state | props | Description                                                  |
+| ------------------ | ---------- | ----- | ----- | ------------------------------------------------------------ |
+| Main Container     | functional | Y     | N     | *Main logic will happen here and pass data into the components that require it.* |
+| Layout             | functional | N     | N     | *This will contain the responsive navigation bar.*           |
+| Login              | functional | Y     | N     | *Will collect user input and send via services to backend for login verification.* |
+| Signup             | functional | Y     | N     | *Will collect user input and send via services to create a new user profile.* |
+| QuestionBoxEditor  | functional | Y     | Y     | *Contains the questions and code editor - Exact logic of game is TBD.* |
+| AnimationContainer | functional | Y     | Y     | *Will render a rocket ship lifting off from the ground and sky changing based on answers.* |
+| PlayerScore        | functional | Y     | Y     | *Will show users their previous recorded scores.*            |
+| HighScore          | functional | Y     | Y     | *Will show users the global high scores from all players.*   |
+
+```
+src
+|__ components/
+      |__ Nav.jsx
+      |__ Footer.jsx
+      |__ Search.jsx
+      |__ Filter.jsx
+      |__ BookCard.jsx
+      |__ Reviews.jsx
+      |__ ReviewCard.jsx
+      |__ ReviewCreate.jsx
+|__ containers/
+      |__ BooksContainer.jsx
+|__ layouts/
+      |__ Layout.jsx
+      |__ Layout.css
+|__ screens/
+      |__ Login.jsx
+      |__ SignUp.jsx
+      |__ BookCreate.jsx
+      |__ Books.jsx
+      |__ BookDetails.jsx
+      |__ BookEdit.jsx
+|__ services/
+      |__ api-config.js
+      |__ auth.js
+      |__ books.js
+      |__ reviews.js
+      |__ tags.js
+|__ App.js
+|__ App.css
+|__ index.js
+|__ index.css
+```
+
+
+
