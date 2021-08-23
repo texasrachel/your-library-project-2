@@ -11,10 +11,10 @@ your library is an app for tracking your personal library catalog. It is built o
 
 ## Wireframes
 
-  ![wireframe of desktop site](https://res.cloudinary.com/texasrachel/image/upload/v1629482001/your-library-wireframe-desktop.png)
+  <img src="https://res.cloudinary.com/texasrachel/image/upload/v1629502502/your-library-wireframe-desktop.png" alt="wireframe of desktop site" style="zoom: 67%;" />
 
 ![wireframe of mobile site](https://res.cloudinary.com/texasrachel/image/upload/v1629482148/your-library-wireframe-mobile.png)
-  
+
 ## Component Hierarchy
 
 ![component hierarchy display](https://res.cloudinary.com/texasrachel/image/upload/v1629484654/your-library-hierarchy.png)
@@ -81,7 +81,7 @@ your library is an app for tracking your personal library catalog. It is built o
 	- [ ] add photo
 	- [ ] ability to edit
 	- [ ] ability to delete
-![wireframe of Post MVP](https://res.cloudinary.com/texasrachel/image/upload/v1629472022/your-library-wireframe-post-mvp.png)
+	![wireframe of Post MVP](https://res.cloudinary.com/texasrachel/image/upload/v1629472022/your-library-wireframe-post-mvp.png)
 
 ## Project Schedule
 
@@ -98,7 +98,7 @@ your library is an app for tracking your personal library catalog. It is built o
 | August 27 | Presentations |  |
 
 ## Timeframes
-  
+
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 |--|:--:|:--:|:--:|:--:|
 | Setup basic app | M | 3hrs |  |  |
@@ -114,7 +114,7 @@ your library is an app for tracking your personal library catalog. It is built o
 | Responsiveness | M | 3hrs |  |  |
 | Deployment | H | 2hrs |  |  |
 | Total | 36 | hrs |  |  |
- 
+
 ## SWOT Analysis
 
 ### Strengths:
@@ -128,7 +128,7 @@ I'm not comfortable yet with React, parameters, and components. I'll need to mak
 ### Opportunities:
 
 This project will give me an opportunity to work on my needed JavaScript and React skills and improve my understanding of how they work.
- 
+
 ### Threats:
 
  I need to make sure I don't waste time looking for answers when I can ask for help. There's trying to learn and being stubborn. I need to make sure I'm doing the former, not being the latter.
