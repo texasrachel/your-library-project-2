@@ -1,7 +1,7 @@
 function Add(props) {
 
   return (
-
+    <p>Adding</p>
   )
 }
 

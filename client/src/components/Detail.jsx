@@ -1,7 +1,7 @@
 function Detail(props) {
   
   return (
-    
+    <p>Detailing</p>
   )
 }
 
