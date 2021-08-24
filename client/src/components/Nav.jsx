@@ -24,3 +24,4 @@ function Nav(props) {
 export default Nav
 
 // Link is specifically for links ie to help with moving around
+//useParams - hook helps get the parameter passed on the URL without using the props object.

@@ -12,6 +12,7 @@ import { Route, Switch } from 'react-router-dom'
 
 function App() {
   const [media, setMedia] = useState([])
+  const [newSearch, setNewSearch] = useState('')
   // const mediaArray = { media.map(indivMedia, index)}
 
   useEffect(() => {
@@ -21,12 +22,12 @@ function App() {
       console.log(res.data.records)
     }
     getMedia()
-    console.log(setMedia)
+    // console.log(setMedia)
   }, [])
 
   return (
     // do i need switch with the route? think so bc of indiv pages
-
+<>
     <div className='App'>
       <h1>your library</h1>
       <div className='container'>
@@ -38,32 +39,24 @@ function App() {
             Home
           </Route>
           <Route path='/catalog'>
-            <p>{setMedia.id}</p>
-            {console.log(setMedia)}
-                {media.map((indivMedia, index) => {
-                return (
-                  <Catalog key={index} indivMedia={indivMedia} />
-                  )
-                })}
+              <Catalog media={media} />
           </Route>
           <Route path='/add'>
             <Add />
           </Route>
           <Route path='/search'>
-            <Search />
+              <Search setNewSearch={ setNewSearch }/>
           </Route>
           <Route detail='/detail/:id'>
-            <Detail media={media} />
+            <Detail media={media}  />
           </Route>
       </Switch>
         <button>Catalog</button>
-          
-        {console.log({ setMedia })}
         <button>Search</button>
         <button>Add Media</button>
-        <p>test</p>
       </div>
-    </div>
+      </div>
+      </>
   )
 } 
 

@@ -1,5 +1,7 @@
-// import axios from 'axios'
+
+import axios from 'axios'
 import { useState } from 'react'
+import { baseURL, config } from '../services'
 
 function Add(props) {
   const [title, setTitle] = useState('')
@@ -7,6 +9,13 @@ function Add(props) {
   const [subject, setSubject] = useState('')
   // const [newMedia, setNewMedia] = useState([])?????{}
   
+  // yeah not quite
+  useEffect(() => {
+    const addToAirtable = async () => {
+      const res = await axios.post(`baseURL`, config)
+    }
+  })
+
 // not working - not adding to airtable
   const addToApi = () => {
     console.log(title)
@@ -14,11 +23,15 @@ function Add(props) {
     console.log(subject)
   }
 
+  const handleSubmit = (e) => {
+    e.preventDefault()
+  }
+
   return (
     <>
     <p>Adding</p>
       <form className='add-books'
-      // onSubmit={handleSubmit}
+      onSubmit={handleSubmit}
       >
         <label htmlFor='title'>Title: </label>
         <input 
@@ -47,7 +60,6 @@ function Add(props) {
           onChange={(e) => setSubject(e.target.value)}
         />
         <br />
-   
         <button onClick={ addToApi } type='submit'>Submit</button>
       </form>
     </>
@@ -57,8 +69,7 @@ function Add(props) {
 export default Add
 
 
-// const handleSubmit = (e) => {
-// e.preventDefault()
+
 // const addMedia = {
 // title,
 // author,

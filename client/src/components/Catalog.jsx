@@ -1,42 +1,43 @@
-// import { useState, useEffect } from 'react'
-// import axios from 'axios'
-// import { baseURL, config } from '../services'
 import React from 'react'
 import { Link } from 'react-router-dom'
+import Detail from './Detail'
 
 function Catalog(props) {
-  console.log(props.indivMedia)
-  const { title, author, subject } = props.indivMedia.fields
-  const { id } = props.indivMedia
-  // const [fromAirtable, setFromAirtable] = useState([])
 
   return (
-    <>
-      {/* {fromAirtable.map((indivMedia, index) => {
-        return (
-          <Catalog key={index} indivMedia={indivMedia} />
-          )
-      })}
-       */}
-      <div className='book'>
-        <Link to={`/detail/${props.indivMedia.id}`}>
-          <p>Title: {title}</p>
-          <p>Author: {author}</p>
-          <p>Subject: {subject}</p>    
-        </Link>
-      </div>
-    </>
-  )
-}
+      // figure out if need to change to index instead of item. id
+      <>
+        <h3>Catalog</h3>
+        <div className='book'>
+          {props.media.map((item, index) => (
+            <li key={item.id}>
+              <h4>{item.id}</h4>
 
+              <Link to={`/detail/${item.id}`} item={item.id}>
+              {console.log(item.id)}
+              {/* {console.log(media.fields.title)} */}
+              <p>
+                Title: {props.media[index].fields.title}
+              </p>
+              <p>
+                Author: {props.media[index].fields.author}
+              </p>
+              <p>
+                Subject: {props.media[index].fields.subject}
+                </p>
+                <p>
+                Status: {props.media[index].fields.status}
+                </p>
+                <p>
+                Thoughts: {props.media[index].fields.thoughts}
+              </p>
+              </Link>   
+            </li>
+            )
+        )} */}
+        </div>
+      </>
+    )
+  }
 export default Catalog
 
-
-// useEffect(() => {
-//   const getFromAirtable = async () => {
-//     const res = await axios.get(baseURL, config)
-//     setFromAirtable(res.data.records)
-//   }
-//   getFromAirtable()
-//   console.log(setFromAirtable.records)
-// }, [])
