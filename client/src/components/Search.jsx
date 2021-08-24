@@ -2,27 +2,26 @@ import { useState, useEffect } from 'react'
 
 function Search(props) {
   const [searchTerm, setSearchTerm] = useState('')
+  const searchValue = ('')
 
   useEffect(() => {
     if (searchValue !== null) {
       setSearchTerm(searchTerm)
     }
-    
-
   }, [searchTerm])
 
 // on submit set the inputted value as term for each search term
   const handleSubmit = (e) => {
     e.preventDefault()
     console.log('clicked me')
-
-    // new variable for searching through catalog
-    const searchValue = {
-      title,
-      author,
-      subject,
-    }
-}
+    setSearchTerm('')
+// new variable for searching through catalog
+    // const searchValue = {
+    //   title,
+    //   author,
+    //   subject,
+    // }
+  }
 
   return (
     <div className='search'>
@@ -30,8 +29,9 @@ function Search(props) {
       <form onSubmit={handleSubmit}>
         <input
           type='text'
-          autocomplete='off'
           value={searchValue}
+          placeholder='author, title, or subject'
+          autocomplete='off'
           onChange={e =>
             setSearchTerm(e.target.value)} />
         {console.log(setSearchTerm)}

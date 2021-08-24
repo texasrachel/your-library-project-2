@@ -2,13 +2,25 @@ import { Link } from 'react-router-dom'
 
 function Nav(props) {
   return (
-    <nav>
-      <h1>Navigation</h1>
-      <Link to='/'>Home</Link>
-      <Link to='/add'>Add New Media</Link>
-      <Link to='/search'>Search in Catalog</Link>
-    </nav>
+    <>
+      <ul>
+      <li>
+        <Link to='/'>Home</Link>
+      </li>
+      <li>
+        <Link to='/catalog'>Catalog</Link>
+      </li>
+      <li>
+        <Link to='/add'>Add Media</Link>
+      </li>
+      <li>
+        <Link to='/search'>Search</Link>
+        </li>
+      </ul>
+    </>
   )
 }
 
 export default Nav
+
+// Link is specifically for links ie to help with moving around
