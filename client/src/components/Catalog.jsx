@@ -5,7 +5,9 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 function Catalog(props) {
-  const { title, author, subject } = props.indivMedia
+  console.log(props.indivMedia)
+  const { title, author, subject } = props.indivMedia.fields
+  const { id } = props.indivMedia
   // const [fromAirtable, setFromAirtable] = useState([])
 
   return (
@@ -17,11 +19,11 @@ function Catalog(props) {
       })}
        */}
       <div className='book'>
-        {/* <Link to={`/detail/${props.media.id}`}> */}
+        <Link to={`/detail/${props.indivMedia.id}`}>
           <p>Title: {title}</p>
           <p>Author: {author}</p>
           <p>Subject: {subject}</p>    
-        {/* </Link> */}
+        </Link>
       </div>
     </>
   )

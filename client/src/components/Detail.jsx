@@ -1,4 +1,7 @@
 function Detail(props) {
+  console.log(props.media)
+  // const { title, author, subject, thoughts } = props.indivMedia.fields
+  // const { id } = props.indivMedia
 
   return (
     <div className='detail'>

@@ -12,6 +12,7 @@ import { Route, Switch } from 'react-router-dom'
 
 function App() {
   const [media, setMedia] = useState([])
+  // const mediaArray = { media.map(indivMedia, index)}
 
   useEffect(() => {
     const getMedia = async () => {
@@ -20,7 +21,7 @@ function App() {
       console.log(res.data.records)
     }
     getMedia()
-    console.log(setMedia.records)
+    console.log(setMedia)
   }, [])
 
   return (
@@ -38,6 +39,7 @@ function App() {
           </Route>
           <Route path='/catalog'>
             <p>{setMedia.id}</p>
+            {console.log(setMedia)}
                 {media.map((indivMedia, index) => {
                 return (
                   <Catalog key={index} indivMedia={indivMedia} />
@@ -54,9 +56,8 @@ function App() {
             <Detail media={media} />
           </Route>
       </Switch>
-          <button>Catalog</button>
+        <button>Catalog</button>
           
-
         {console.log({ setMedia })}
         <button>Search</button>
         <button>Add Media</button>
