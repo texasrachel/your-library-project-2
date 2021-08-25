@@ -73,6 +73,15 @@ function Add(props) {
           value={type}
           id='type'
           onChange={(e) => setType(e.target.value)}
+          />
+        <label htmlFor='type'>Status: </label>
+        <input 
+          type='type'
+          className='add-input'
+          placeholder='status'
+          value={status}
+          id='status'
+          onChange={(e) => setType(e.target.value)}
         />
         <br />
         <button

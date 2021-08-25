@@ -29,38 +29,10 @@ function App() {
     <div className='App'>
       <h1>your library</h1>
         <div className='A' >
-          <NavLink exact activeClassName='active' to='/'>
-            Home
-          </NavLink>
-          {' * '}
-          <NavLink activeClassName='active' to='/catalog'>
-            Catalog
-          </NavLink>
-          {' * '}
-          <NavLink to='/add'>
-            Add Media
-          </NavLink>
-          {' * '}
-          <NavLink activeClassName='active' to='/search'>
-            Search
-          </NavLink>
-        <Switch>
-          <Route path='/' exact>
-            <App />
-          </Route>
-          <Route path='/catalog'>
-            <Catalog media={media} />
-          </Route>
-          <Route path='/add' >
-            <Add />
-          </Route>
-          <Route path='/search'>
-            <Search setNewSearch={ setNewSearch }/>
-          </Route>
-          <Route detail='/detail/:id'>
-            <Detail media={media}  />
-          </Route>
-        </Switch>
+        <Catalog media={media} />
+        <Add media={media} />
+        <Search media={media} />
+        <Detail media={ media } />
         {/* <button>Catalog</button>
         <button>Search</button>
         <button>Add Media</button> */}
