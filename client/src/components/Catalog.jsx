@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom'
 import Detail from './Detail'
 
 function Catalog(props) {
-
+  
   return (
       // figure out if need to change to index instead of item. id
       <>
         <h3>Catalog</h3>
-        <div className='book'>
+        <div className='catalog'>
           {props.media.map((item, index) => (
             <li key={item.id}>
               <h4>{item.id}</h4>
@@ -34,7 +34,8 @@ function Catalog(props) {
               </Link>   
             </li>
             )
-        )} */}
+        )}
+        <h1>filter</h1>
         </div>
       </>
     )

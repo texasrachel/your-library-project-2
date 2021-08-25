@@ -1,84 +1,62 @@
 .App {
   text-align: center;
   margin: auto;
-  width: 600px;
+  width: 75%;
   border: 1px red solid;
-}
-h1{
-  font-size: 30px;
-  font-family: fantasy;
-}
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border: 1px solid darkblue;
+  background: #eaeaea;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 1fr;
 }
 
-.item {
-  height: 40px;
-  margin-bottom: 10px;
-  border: 1px solid aqua;
+.nav {
+  grid-template-columns: 1 ;
+  grid-template-rows: 1 ;
+  border: 1px solid darkmagenta;
 }
-/* .container {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 0.3fr 1fr 1.8fr;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-}
-.image-index { grid-area: 1 / 1 / 3 / 2; }
-.navigation { grid-area: 1 / 1 / 2 / 2; }
-.main-index { grid-area: 1 / 1 / 4 / 2; } */
-body {
-  background: #eaeaea;
+.B {
   display: flex;
-  flex-direction: column;
-  border: 1px saddlebrown solid;
-}
-.hero {
-  flex: 0 1 auto;
-  border: 1px solid aquamarine;
-}
-main {
-  flex: 2 1 auto;
-  border: 1px solid azure;
-}
-.nav{
-  flex: 0 1 auto;
-  border: 1px solid salmon;
-}
-.detail,
-.catalog {
-  flex-direction: row;
-}
-.detail-info {
-  flex: 1 1 auto;
-  width: 30%;
-  border: 1px solid seagreen;
-}
-.detail-thoughts {
-  flex: 2 1 auto;
-  border: 1px solid skyblue;
-}
-.catalog-filter{
-  flex: 1 1 auto;
-}
-.catalog-list{
-  flex: 2 1 auto;
-  border: 1px solid slateblue;
-}
-.add{
+  flex-flow: row nowrap;
   justify-content: center;
-  border: 1px solid springgreen;
+  border: 1px solid deepskyblue;
+  text-align: center;
+  margin: auto;
 }
-.add-books{
-  flex-direction: column;
+.C {
+  grid-template-columns: 1fr 1fr;
+  border: 1px solid darkred;
+  padding: 10px;
+  margin: 10px;
+  height: 100px;
+  gap: 10px;
+}
+button {
+  width:140px;
+  height:50px;
+  border-width: 2px;
+  border-radius: 25px;
+  background-color: red;
+  color: darkgrey;
+  box-shadow: 0px 1px 0px 0px #1c1b18;
+}
+button:hover{
+  background-color: salmon;
+  color: black;
+}
+/* div b then  overlay then home-image then close div b */
+.overlay {
+  position: absolute;
+  font-size: 50px;
+  z-index: 10;
+  text-align: center;
+  padding: 150px 0px 0px 150px;
+  border: 1px yellow solid;
   align-items: center;
-  justify-items: center;
-  background-color: mediumaquamarine;
-  padding: 5px;
-}
-.book {
-  border: 1px solid greenyellow;
-}
+  margin: 0;
+  background-color: rgba(0,0,0,.4)
+    color: #f2f2f2;
+  }
+  .home-image {
+
+  
+  }

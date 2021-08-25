@@ -3,12 +3,11 @@ import { baseURL, config } from './services';
 import './App.css'
 import { useState, useEffect } from 'react'
 import React from 'react';
-import Nav from './components/Nav';
 import Catalog from './components/Catalog'
 import Add from './components/Add'
 import Search from './components/Search'
 import Detail from './components/Detail'
-import { Route, Switch } from 'react-router-dom'
+import { Route, NavLink, Switch } from 'react-router-dom'
 
 function App() {
   const [media, setMedia] = useState([])
@@ -27,36 +26,46 @@ function App() {
 
   return (
     // do i need switch with the route? think so bc of indiv pages
-<>
     <div className='App'>
       <h1>your library</h1>
-      <div className='container'>
-        <div className='nav'>
-          <Nav />
-        </div>
+        <div className='A' >
+          <NavLink exact activeClassName='active' to='/'>
+            Home
+          </NavLink>
+          {' * '}
+          <NavLink activeClassName='active' to='/catalog'>
+            Catalog
+          </NavLink>
+          {' * '}
+          <NavLink to='/add'>
+            Add Media
+          </NavLink>
+          {' * '}
+          <NavLink activeClassName='active' to='/search'>
+            Search
+          </NavLink>
         <Switch>
           <Route path='/' exact>
-            Home
+            <App />
           </Route>
           <Route path='/catalog'>
-              <Catalog media={media} />
+            <Catalog media={media} />
           </Route>
-          <Route path='/add'>
+          <Route path='/add' >
             <Add />
           </Route>
           <Route path='/search'>
-              <Search setNewSearch={ setNewSearch }/>
+            <Search setNewSearch={ setNewSearch }/>
           </Route>
           <Route detail='/detail/:id'>
             <Detail media={media}  />
           </Route>
-      </Switch>
-        <button>Catalog</button>
+        </Switch>
+        {/* <button>Catalog</button>
         <button>Search</button>
-        <button>Add Media</button>
+        <button>Add Media</button> */}
       </div>
-      </div>
-      </>
+    </div>
   )
 } 
 

@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 import { baseURL, config } from '../services';
 import React from 'react'
-
+ 
 function Detail(props) {
   console.log(props.media)
   // const { title, author, subject, currentStatus, thoughts, id} = props.media
@@ -23,10 +23,15 @@ function Detail(props) {
   return (
     <div className='detail' >
       <p>Detail</p>
-      {/* <h2>Title: {props.media.title}</h2>
+      {/* <div className='info'> 
+      <h2>Title: {props.media.title}</h2>
       <h3>by Author: {props.author}</h3>
       <p>Subject: {props.subject}</p>
-      <p>{props.thoughts}</p> */}
+      <p>Type: {props.type}</p>
+      </div>
+      <div className="thoughts">
+      <p>{props.thoughts}</p>
+      </div> */}
     </div>
   )
 }

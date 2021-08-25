@@ -1,12 +1,13 @@
 
 import axios from 'axios'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { baseURL, config } from '../services'
 
 function Add(props) {
   const [title, setTitle] = useState('')
   const [author, setAuthor] = useState('')
   const [subject, setSubject] = useState('')
+  const [type, setType] = useState('')
   // const [newMedia, setNewMedia] = useState([])?????{}
   
   // yeah not quite
@@ -29,12 +30,14 @@ function Add(props) {
 
   return (
     <>
+    <div className='adding'>
     <p>Adding</p>
       <form className='add-books'
       onSubmit={handleSubmit}
       >
         <label htmlFor='title'>Title: </label>
-        <input 
+        <input
+          className='add-input'
           type='text'
           placeholder='title'
           value={title}
@@ -45,6 +48,7 @@ function Add(props) {
       <label htmlFor='author'>Author: </label>
         <input 
           type='text'
+          className='add-input'
           placeholder='author'
           value={author}
           id='author'
@@ -54,14 +58,29 @@ function Add(props) {
         <label htmlFor='subject'>Subject: </label>
         <input 
           type='subject'
+          className='add-input'
           placeholder='subject'
           value={subject}
           id='subject'
           onChange={(e) => setSubject(e.target.value)}
         />
+          <br />
+          <label htmlFor='type'>Type: </label>
+        <input 
+          type='type'
+          className='add-input'
+          placeholder='type'
+          value={type}
+          id='type'
+          onChange={(e) => setType(e.target.value)}
+        />
         <br />
-        <button onClick={ addToApi } type='submit'>Submit</button>
-      </form>
+        <button
+          onClick={addToApi}
+          className='add-button'
+          type='submit'>Submit</button>
+        </form>
+        </div>
     </>
   )
 }

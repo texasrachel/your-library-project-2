@@ -1,0 +1,24 @@
+
+.nav {
+  border: 1px solid darkmagenta;
+  grid-area: 1 / 1 / 1 / 4;
+  justify-self: center;
+}
+
+.catalog {
+  display: grid;
+  border: 1px solid green;
+}
+.list {
+  border: 1px solid darkmagenta;
+  justify-items: end;
+  align-items: start;
+  grid-area: 2 / 1 / 4 / 3;
+  height: 100px;
+}
+.filter{
+  border: 1px solid blue;
+  justify-items: start;
+  align-items: start;
+  grid-area: 2 / 3 / 4 / 3;
+}

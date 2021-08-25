@@ -21,8 +21,9 @@ function Search(props) {
   return (
     <div className='search'>
       <p>Searching...</p>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className='search-form'>
         <input
+          className='search-input'
           id='searchTerm'
           type='text'
           value={searchTerm}
@@ -30,7 +31,10 @@ function Search(props) {
           autocomplete='off'
           onChange={(e) =>
             setSearchTerm(e.target.value)} />
-        <input type='submit' value='search catalog' />
+        <input
+          type='submit'
+          value='search catalog'
+          className='search-button'/>
       </form>
     </div>
   )
