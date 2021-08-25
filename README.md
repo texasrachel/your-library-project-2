@@ -89,7 +89,7 @@ your library is an app for tracking your personal library catalog. It is built o
 |:--:|:--:|:--:|
 | August 19 | Prompt / Wireframes / Airtable API / GitHub | Yes |
 | August 20 | Hierarchy / Readme / Project Approval | Yes  |
-| August 21 | Core Application Structure - HTML, CSS / Pseudocode / React App | |
+| August 21 | Core Application Structure - HTML, CSS / Pseudocode / React App | Yes |
 | August 22 | Components / Axios integration |  |
 | August 23 | Responsive & CSS Styling / Deploy to Netlify | |
 | August 24 | MVP |  |
@@ -101,13 +101,13 @@ your library is an app for tracking your personal library catalog. It is built o
 
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 |--|:--:|:--:|:--:|:--:|
-| Setup basic app | M | 3hrs |  |  |
+| Setup basic app | M | 3hrs | 2 |  |
 | Setup basic React App & folder structure | H | 4hrs |  |  |
 | Styling | M | 3hrs |  |  |
 | Axios call to Airtable & render catalog | H | 3hrs |   |  |
 | Filter catalog component with Airtable filtering | H | 4hrs |  |  |
 | Search catalog & axios get | H | 4hrs |  |  |
-| Individual component | H | 2hrs |  |  |
+| Individual detail component | H | 2hrs |  |  |
 | Add book component & axios post | H | 3hrs |  |  |
 | Add thought component & axios put | H | 3hrs |  |  |
 | Navigation component | M | 2hrs |  |  |
