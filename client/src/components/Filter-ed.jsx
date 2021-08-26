@@ -5,6 +5,26 @@ import axios from 'axios'
 // import { baseURL, config } from '../services'
 
 function Filter(props) {
+// destructured above
+  // const props = { title: 'the grinch' }
+  // const title = props.title
+  // const { title, author } = props.items.fields
+
+    // const { title, author, subject, type, status, thoughts } = props.items.fields
+
+    // need item/items?
+  // const lowerCaseArray = props.items.toLowerCase().trim()
+  // const lowerCaseInput = inputTerm.toLowerCase().trim()
+    // if (lowerCaseInput === '') setResult(result)
+    // else {
+    // if (searchTerm !== 'subject') {
+  
+        {/* {props.items.filter((item) => id === "rec6cXXTkMNqGfkPQ").map(result => (
+          console.log(result)
+          <h1>{id}</h1>
+        )))
+      } */}
+
   // const [searchTerm, setSearchTerm] = useState('')
   // // const [toggleFetch, setToggleFetch] = useState(false)
   // const [book, setBook] = useState(null)

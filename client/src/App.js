@@ -61,7 +61,10 @@ function App() {
             <Catalog items={ items }/>
           </Route>
           <Route path='/search'>
-            <Search items={items} setToggleFetch={setToggleFetch} />
+            <Search
+              items={items}
+              // setToggleFetch={setToggleFetch}
+            />
           </Route>
           <Route path='/edit'>
             <Edit items={ items }/>
