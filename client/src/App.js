@@ -1,4 +1,3 @@
-
 import './App.css'
 import axios from 'axios'
 import React, { useState, useEffect } from 'react'
@@ -17,7 +16,6 @@ function App() {
   useEffect(() => {
     const getMedia = async () => {
       const res = await axios.get('https://api.airtable.com/v0/appVJkVUZWavAw5go/catalog?api_key=keyVYuxU0tZerihYZ')
-      // console.log(res.data)
       setItems(res.data.records)
     }
     getMedia()
@@ -28,7 +26,6 @@ function App() {
     <div className='App'>
         <nav>
           <ul className='nav'>
-            {/* id: {media.records[0].id} */}
             <li>
               <Link to='/'>Home</Link>
             </li>
@@ -51,10 +48,16 @@ function App() {
         </div>
       </div>
       <div className='home'>
-        <Route path='/' exact>
-            <button>Catalog </button>
-            <button>Add </button>
-            <button>Search </button>
+          <Route path='/' exact>
+            <Link to='/catalog'>
+              <button type='button'>Catalog</button>
+            </Link>
+            <Link to='/edit'>
+              <button type='button'>Add</button>
+            </Link>
+            <Link to='/search'>
+              <button type='button'>Search</button>
+            </Link>
         </Route>
         <Route path='/catalog'>
             <Catalog items={ items }/>
@@ -63,7 +66,6 @@ function App() {
             <Search
               items={items}
               setFilteredBooks={setFilteredBooks}
-              // setToggleFetch={setToggleFetch}
             />
             {filteredBooks.length && <Catalog items={filteredBooks} />}
           </Route>
@@ -72,9 +74,6 @@ function App() {
           </Route>
           <Route path='/detail/:id' >
             <Detail items={items}  />
-          </Route>
-          <Route path='/filter'>
-            {/* <Filter items={items}/> */}
           </Route>
       </div>
     </div>

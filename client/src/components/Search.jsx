@@ -6,12 +6,8 @@ function Search(props) {
   const [searchTerm, setSearchTerm] = useState('')
   const { author, subject, status, type } = props.items
 
-  // console.log(props.items)
-
-  // useEffect(() => {
   const handleSubmit = (e) => {
     e.preventDefault()
-    
     const searchResults = props.items.filter((item) => {
       const {title, author, subject, type} = item.fields
       console.log(title, subject, type)
@@ -19,7 +15,6 @@ function Search(props) {
     });
     props.setFilteredBooks(searchResults)
   }
-    // , [])
 
   return (
     <div className='search'>
@@ -34,7 +29,6 @@ function Search(props) {
           type='text'
           value={searchTerm}
           placeholder='author, subject, status, or type'
-          // autocomplete='off'
           onChange={(e) =>
             setSearchTerm(e.target.value)} />
         <button
@@ -44,7 +38,6 @@ function Search(props) {
         </button>
       </form>    
     </div> 
-
   </div>
   )
 }

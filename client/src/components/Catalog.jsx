@@ -1,17 +1,13 @@
 import { Link } from 'react-router-dom'
 import './styling/Catalog.css'
-// import Filter from './Filter'
 import { useEffect } from 'react'
 import axios from 'axios'
 
 function Catalog(props) {
 
-  // console.log(props)
-
   const handleSubmit = async (e) => {
     e.preventDefault()  
     await axios.get('https://api.airtable.com/v0/appVJkVUZWavAw5go/catalog?api_key=keyVYuxU0tZerihYZ/')
-      // props.setToggleFetch((prevToggleFetch) => !prevToggleFetch)
   }
 
   return (
