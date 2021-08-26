@@ -42,9 +42,9 @@ function App() {
       </div>
       <div className='home'>
         <Route path='/' exact>
-            <h3>List </h3>
-            <h3>add </h3>
-            <h3>Search </h3>
+            <button>Catalog </button>
+            <button>Add </button>
+            <button>Search </button>
         </Route>
         <Route path='/catalog'>
             <h3>catalog</h3>
@@ -53,10 +53,6 @@ function App() {
           <Route path='/search'>
             <h3>search books</h3>
             <Search items={items} setToggleFetch={setToggleFetch} />
-          </Route>
-          <Route path='/detail'>
-            <h3>add new books</h3>
-            <Detail />
           </Route>
           <Route path='/add/:id'>
             <h3>Edit books</h3>
@@ -69,7 +65,7 @@ function App() {
             />
           </Route>
           <Route path='/filter'>
-            {/* <Filter /> */}
+            {/* <Filter items={items} setToggleFetch={setToggleFetch} /> */}
           </Route>
       </div>
     </div>

@@ -1,15 +1,17 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 
 function Filter(props) {
   const [filter, setFilter] = useState('')
+
+  const params = useParams()
 
   // useEffect(() => {
   // if (filter === api) return 
   // filterByFormula: `SEARCH("${slug}",{lookupCaseSlug} & "")`,
   // filterByFormula={Field Name}="value"
   // %201?fields%5B%5D=Notes&filterByFormula=SEARCH(%22ux%22%2C+Notes)&api_key=YOUR_API_KEY
-
 
   setName(e.target.value)
 

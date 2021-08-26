@@ -15,10 +15,10 @@ function Catalog(props) {
         <div className='list'>
         {props.items.map((item, index) => {
           return (
-              <Route path='/detail' >
+              <Route path='/detail/:id' >
                 <Link to={`/detail/${props.items[index].id}`} >
-                    Title: {props.items[index].fields.title}
-                    <Detail items={props.items} key={index} />
+                    {/* Title: {props.items[index].fields.title}
+                    <Detail items={props.items} key={index} /> */}
                     Book
                   </Link>
                 </Route>
