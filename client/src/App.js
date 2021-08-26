@@ -8,7 +8,7 @@ import Edit from './components/Edit'
 import Detail from './components/Detail'
 import Catalog from './components/Catalog'
 import Search from './components/Search'
-import Filter from './components/Filter'
+// import Filter from './components/Filter'
 
 
 function App() {
@@ -70,7 +70,7 @@ function App() {
             <Detail items={items}  />
           </Route>
           <Route path='/filter'>
-            <Filter items={items}/>
+            {/* <Filter items={items}/> */}
           </Route>
       </div>
     </div>

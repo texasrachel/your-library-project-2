@@ -7,7 +7,7 @@ function Detail(props) {
   const [book, setBook] = useState(null)
   const { id } = useParams()
   // console.log(props.item)
-  console.log(id)
+  // console.log(id)
   
   useEffect(() => {
     if (id && props.items.length) {

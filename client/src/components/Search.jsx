@@ -4,40 +4,37 @@ import React from 'react'
 import './styling/Search.css'
 
 function Search(props) {
+  console.log(props.items)
+  const [inputTerm, setInputTerm] = useState('')
+  const [result, setResult] = useState([])
   const [searchTerm, setSearchTerm] = useState('')
-  // const [toggleFetch, setToggleFetch] = useState(false)
-  const [book, setBook] = useState(null)
-  const inputTerms = {
-    title: 'title',
-    author: 'author',
-    subject: 'subject',
-  }
-  // const { id } = useParams()
-  // console.log(props.item)
-  // console.log(word)
-  // const { title, author, subject } = item.fields
 
+    // const { title, author, subject, type, status, thoughts } = props.item.fields
+  
+  // need item/items?
+  // const lowerCaseArray = props.items.toLowerCase().trim()
+  // const lowerCaseInput = inputTerm.toLowerCase().trim()
+    // if (lowerCaseInput === '') setResult(result)
+    // else {
+    // if (searchTerm !== 'subject') {
+  
   useEffect(() => {
-    const searchItem = props.items.find((item) => item.title === searchTerm 
-    || item.author === searchTerm || item.subject === searchTerm)
-    if (searchItem) {
-      setSearchTerm(searchItem) 
-    } 
-  // }, [props.items, id])
-  },[])
+    const result = props.items.find(item => item.id === "rec1BL3DNK9xRFJ93")
+  }, [props.items]);
+  
+  console.log( result)
+  
 
   const handleSubmit = async (e) => {
-    e.preventDefault()  
+    e.preventDefault()
     await axios.get('https://api.airtable.com/v0/appVJkVUZWavAw5go/catalog?api_key=keyVYuxU0tZerihYZ/')
       // props.setToggleFetch((prevToggleFetch) => !prevToggleFetch)
   }
 
-    // await axios.put(`https://api.airtable.com/v0/appVJkVUZWavAw5go/catalog?api_key=keyVYuxU0tZerihYZ/${params.id}`, { fields: newMedia })
-
   return (
     <div className='search'>
+      {inputTerm !== null ?
       <div className='search-area'>
-        <h2>Searching...</h2>
         <form
         onSubmit={handleSubmit}
         className='search-form'>
@@ -55,8 +52,10 @@ function Search(props) {
           className='search-button'>
         search
         </button>
-      </form>
-    </div>
+      </form>    
+    </div> :
+      <h1>Searching...</h1>
+    }
   </div>
   )
 }
