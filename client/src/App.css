@@ -107,23 +107,3 @@ a.button {
 .nav a{
   text-decoration: none;
 }
-<<<<<<< HEAD
-/* div b then  overlay then home-image then close div b */
-.overlay {
-  position: absolute;
-  font-size: 50px;
-  z-index: 10;
-  text-align: center;
-  padding: 150px 0px 0px 150px;
-  border: 1px yellow solid;
-  align-items: center;
-  margin: 0;
-  background-color: rgba(0,0,0,.4);
-    color: #f2f2f2;
-  }
-  .home-image {
-
-  
-  }
-=======
->>>>>>> testing
