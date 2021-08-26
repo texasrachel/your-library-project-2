@@ -1,10 +1,43 @@
-import { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
-import { useParams } from 'react-router-dom'
-import axios from 'axios'
-// import { baseURL, config } from '../services'
+"rec1BL3DNK9xRFJ93"
 
-function Filter(props) {
+let filteredPeople = people.filter(function (currentElement) {
+  // the current value is an object
+  // so you can check on its properties
+  return currentElement.country === "America" 
+    && currentElement.age < 25;
+});
+console.log(filteredPeople);
+
+let usersOnline = this.state.users.filter(user => {
+      return user.online === true;  /* can use just - (return user.online),
+                                       put for your  reference. */
+    }) ; 
+
+/* filters through the Array - 'users' which is present in the 
+'state' and returns only those users which has 'online' property with 
+value of 'true' in a new Array called 'usersOnline'*/
+
+    let renderOnline = usersOnline.map((Un,i) => {
+     return <li key={i}> {Un.username} </li>
+    }); 
+
+/* Now, the new Array 'usersOnline' is mapped through to get the 
+  'username' values present in it, and return a <li> element containing 
+   the 'usernames' and a unique 'key' value (here its the index value) 
+   which is passed in to a new Array called  'renderOnline' containing 
+   the above mentioned values */
+
+    return (
+       <div>
+         <h1>Current Online Users:</h1>
+         <ul>
+           {renderOnline}  
+         </ul>
+       </div>
+    );
+  }
+}; 
+
 // destructured above
   // const props = { title: 'the grinch' }
   // const title = props.title

@@ -5,22 +5,24 @@ import './styling/Search.css'
 function Search(props) {
   const [searchTerm, setSearchTerm] = useState('')
   
-  const { id, fields } = props.items
+  const { subject, title } = props.items
 
   console.log(props.items)
-  console.log(props.items.fields)
 
-  const results = props.items.filter(item => id)
-  const returnResults = results.map((item) => {
-    <p key={item}>{ item } </p>
-    })
-  
+  useEffect(() => {
+    const searchResults = props.items.filter(function (item) {
+      // return item.id == 'rec1BL3DNK9xRFJ93';
+      return item.fields.title == 'the grinch';
+      // }).map(function({title}){
+      //     return {title};
+    });
+    console.log(searchResults)
+  },[])
 
   return (
     <div className='search'>
       <div className='search-area'>
       <h3>Search...</h3>
-      <h1>results: {returnResults} </h1>
 
       <form
         // onSubmit={handleSubmit}
