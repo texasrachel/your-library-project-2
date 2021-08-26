@@ -1,22 +1,37 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import axios from 'axios'
 import React from 'react'
-import { baseURL, config } from '../services'
 
 function Search(props) {
   const [searchTerm, setSearchTerm] = useState('')
-  const [toggleFetch, setToggleFetch] = useState(false)
+  // const [toggleFetch, setToggleFetch] = useState(false)
+  const [book, setBook] = useState(null)
+  const inputTerms = {
+    title: 'title',
+    author: 'author',
+    subject: 'subject',
+  }
+  // const { id } = useParams()
+  // console.log(props.item)
+  // console.log(word)
+  // const { title, author, subject } = item.fields
+
+  useEffect(() => {
+    const searchItem = props.items.find((item) => item.title === searchTerm 
+    || item.author === searchTerm || item.subject === searchTerm)
+    if (searchItem) {
+      setSearchTerm(searchItem) 
+    } 
+  // }, [props.items, id])
+  },[])
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
-    const inputTerms = {
-      title: 'title',
-      author: 'author',
-      subject: 'subject',
-    }
-    await axios.get(baseURL, { fields: inputTerms }, config)
-      props.setToggleFetch((prevToggleFetch) => !prevToggleFetch)
+    e.preventDefault()  
+    await axios.get('https://api.airtable.com/v0/appVJkVUZWavAw5go/catalog?api_key=keyVYuxU0tZerihYZ/')
+      // props.setToggleFetch((prevToggleFetch) => !prevToggleFetch)
   }
+
+    // await axios.put(`https://api.airtable.com/v0/appVJkVUZWavAw5go/catalog?api_key=keyVYuxU0tZerihYZ/${params.id}`, { fields: newMedia })
 
   return (
 

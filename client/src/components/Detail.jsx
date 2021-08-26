@@ -34,7 +34,7 @@ function Detail(props) {
         </div>
         <div className='thoughts'>
           <p>notes: {book.fields.thoughts}</p>
-          <Link to={`/add/${book.id}`}>
+          <Link to={`/edit/${book.id}`}>
             Edit
           </Link>
         </div>

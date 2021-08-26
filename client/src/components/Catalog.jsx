@@ -1,16 +1,32 @@
 import { Link } from 'react-router-dom'
 import './styling/Catalog.css'
-// import Detail from './Detail'
+import Filter from './Filter'
+import { useEffect } from 'react'
 
 function Catalog(props) {
  //  const { title, author, subject, type, status, thoughts } = props.item.fields
   console.log(props)
 
+  // useEffect(() => {
+  //   if (id && props.items.length) {
+  //     const findBook = props.items.find((item) => item.id === id)
+  //     if (findBook) {
+  //       setBook(findBook)
+  //       const searchItem = props.items.find((item) => item.title === inputTerm
+  //         || item.author === inputTerm || item.subject === inputTerm)
+  //       if (searchItem) {
+  //         setFilter(searchItem)
+  //       }
+  //       // }, [props.items, id])
+  //     }
+  //   }
+  // }, [])
+
   return (
     <>
       <div className='catalog'>
         <div className='filter'>
-          Filter
+          <Filter  />
         </div>
         <div className='list'>
           {props.items.map((item, index) => {
@@ -27,24 +43,3 @@ function Catalog(props) {
 }
 
 export default Catalog
-      
-//   return (
-//     <Detail key={index} item={item} />
-//   )
-// })}
-
-// <Link to={`/detail/${props.items[index]}`} item={props.items[index]}>
-// <h2>{props.items[index].fields.title}</h2>
-//  </Link>
-
-{/* <div className='catalog'>
-  {props.media.map((item, index) => (
-    <li key={item.id}>
-      <h4>{item.id}</h4>
-
-      <Link to={`/detail/${item.id}`} item={item.id}>
-      {console.log(item.id)}
-      {/* {console.log(media.fields.title)} */}
-      // <p>
-      //   Title: {props.media[index].fields.title}
-      // </p> */}

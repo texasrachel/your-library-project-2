@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 import './styling/Add.css'
 import { useParams } from 'react-router-dom'
-import { baseURL, config } from '../services'
 
 function Edit(props) {
   const [title, setTitle] = useState('')
@@ -42,10 +41,10 @@ function Edit(props) {
     }
     if (params.id) {
       //axios.put
-      await axios.put(`baseURL/${params.id}`, { fields: newMedia })
+      await axios.put(`https://api.airtable.com/v0/appVJkVUZWavAw5go/catalog?api_key=keyVYuxU0tZerihYZ/${params.id}`, { fields: newMedia })
     } else {
       //axios.post
-      await axios.post(baseURL, { fields: newMedia }, config)
+      await axios.post("https://api.airtable.com/v0/appVJkVUZWavAw5go/catalog?api_key=keyVYuxU0tZerihYZ", { fields: newMedia })
     }
   }
   

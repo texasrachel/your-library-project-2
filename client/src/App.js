@@ -1,15 +1,15 @@
 
 import './App.css'
 import axios from 'axios'
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Route, Link } from 'react-router-dom'
-import React from 'react'
+// import { baseURL, config } from './services'
 import Edit from './components/Edit'
 import Detail from './components/Detail'
 import Catalog from './components/Catalog'
 import Search from './components/Search'
 import Filter from './components/Filter'
-import { baseURL, config } from './services'
+
 
 function App() {
   const [items, setItems] = useState([])
@@ -17,7 +17,7 @@ function App() {
 
   useEffect(() => {
     const getMedia = async () => {
-      const res = await axios.get(baseURL, config)
+      const res = await axios.get('https://api.airtable.com/v0/appVJkVUZWavAw5go/catalog?api_key=keyVYuxU0tZerihYZ')
       console.log(res.data)
       setItems(res.data.records)
     }
@@ -30,7 +30,7 @@ function App() {
       <nav>
         {/* id: {media.records[0].id} */}
         <Link to='/'>Home</Link>  * | *    
-          <Link to='/detail'>Add books</Link>  * |  *   
+          <Link to='/edit'>Add books</Link>  * |  *   
           <Link to='/search'>Search</Link> * | *
           <Link to ='/catalog'>Catalog</Link>
       </nav>
@@ -63,7 +63,7 @@ function App() {
             <Detail items={items}  />
           </Route>
           <Route path='/filter'>
-            <Filter />
+            <Filter items={items}/>
           </Route>
       </div>
     </div>
