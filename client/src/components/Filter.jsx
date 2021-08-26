@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useParams } from 'react-router-dom'
+import { baseURL, config } from '../services'
 
 function Filter(props) {
   const [filter, setFilter] = useState('')
 
-  const params = useParams()
+  // const params = useParams()
 
   // useEffect(() => {
   // if (filter === api) return 
@@ -13,19 +14,21 @@ function Filter(props) {
   // filterByFormula={Field Name}="value"
   // %201?fields%5B%5D=Notes&filterByFormula=SEARCH(%22ux%22%2C+Notes)&api_key=YOUR_API_KEY
 
-  setName(e.target.value)
+  // setName(e.target.value)
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    const searchItem = {
-      title,
-      author,
-      subject,
-    }
-      await axios.get(`https://api.airtable.com/v0/https%3A%2F%2Fapi.airtable.com%2Fv0%2FappVJkVUZWavAw5go/catalog`,{ fields: searchItem })
+      console.log(props)
   }
-  props.setToggleFetch((prevToggleFetch) => !prevToggleFetch) 
-}
+  //   const searchItem = {
+  //     title,
+  //     author,
+  //     subject,
+  //   }
+  //     await axios.get(baseURL, { fields: searchItem }, config)
+  
+  // props.setToggleFetch((prevToggleFetch) => !prevToggleFetch) 
+
   return (
     <div className='filter'>
       <form onSubmit={handleSubmit}>
@@ -40,6 +43,7 @@ function Filter(props) {
           <option value='subject'>Subject</option>
         </select>
       </form>
+      <Link>
         <button>Filter</button>
       </Link>
     </div>

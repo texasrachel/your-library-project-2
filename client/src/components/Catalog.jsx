@@ -1,10 +1,10 @@
-import { Link, Route } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import './styling/Catalog.css'
-import Detail from './Main'
+// import Detail from './Detail'
 
 function Catalog(props) {
  //  const { title, author, subject, type, status, thoughts } = props.item.fields
-  console.log(props.items)
+  console.log(props)
 
   return (
     <>
@@ -13,26 +13,20 @@ function Catalog(props) {
           Filter
         </div>
         <div className='list'>
-        {props.items.map((item, index) => {
-          return (
-              <Route path='/detail/:id' >
-                <Link to={`/detail/${props.items[index].id}`} >
-                    {/* Title: {props.items[index].fields.title}
-                    <Detail items={props.items} key={index} /> */}
-                    Book
-                  </Link>
-                </Route>
-          )
-        })}
-          </div>
-      </div>
+          {props.items.map((item, index) => {
+            return (
+              <Link to={`/detail/${item.id}`} >
+                Title: {item.fields.title}
+              </Link>
+            )
+          })}
+        </div>
+        </div>
       </> 
   )
 }
 
 export default Catalog
-
-
       
 //   return (
 //     <Detail key={index} item={item} />

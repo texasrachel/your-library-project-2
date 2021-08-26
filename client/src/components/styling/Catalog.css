@@ -5,10 +5,19 @@
 }
 .list {
   border: 1px solid darkmagenta;
-  justify-items: end;
-  align-items: start;
+  justify-items: center;
+  align-items: stretch;
   grid-area: 2 / 1 / 4 / 3;
   height: 100px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+.list a{
+  border: 1px solid lightpink;
+  max-width: 100%;
+  width: 250px;
+  min-height: 200px;
+  gap: 5px;
 }
 .filter{
   border: 1px solid blue;

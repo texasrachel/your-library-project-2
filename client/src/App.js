@@ -4,11 +4,12 @@ import axios from 'axios'
 import { useState, useEffect } from 'react'
 import { Route, Link } from 'react-router-dom'
 import React from 'react'
-import Main from './components/Main'
+import Edit from './components/Edit'
 import Detail from './components/Detail'
 import Catalog from './components/Catalog'
 import Search from './components/Search'
-// import Filter from './components/Filter'
+import Filter from './components/Filter'
+import { baseURL, config } from './services'
 
 function App() {
   const [items, setItems] = useState([])
@@ -16,7 +17,7 @@ function App() {
 
   useEffect(() => {
     const getMedia = async () => {
-      const res = await axios.get("https://api.airtable.com/v0/appVJkVUZWavAw5go/catalog?api_key=keyVYuxU0tZerihYZ")
+      const res = await axios.get(baseURL, config)
       console.log(res.data)
       setItems(res.data.records)
     }
@@ -54,18 +55,15 @@ function App() {
             <h3>search books</h3>
             <Search items={items} setToggleFetch={setToggleFetch} />
           </Route>
-          <Route path='/add/:id'>
+          <Route path='/edit'>
             <h3>Edit books</h3>
-            <Detail items={ items }/>
+            <Edit items={ items }/>
           </Route>
-        <Route path='/detail/:id'>
-            <h3>individual books</h3>
-            <Detail
-              // key={index}
-            />
+          <Route path='/detail/:id' >
+            <Detail items={items}  />
           </Route>
           <Route path='/filter'>
-            {/* <Filter items={items} setToggleFetch={setToggleFetch} /> */}
+            <Filter />
           </Route>
       </div>
     </div>

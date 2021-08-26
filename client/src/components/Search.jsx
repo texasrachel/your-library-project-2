@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import axios from 'axios'
 import React from 'react'
+import { baseURL, config } from '../services'
 
 function Search(props) {
   const [searchTerm, setSearchTerm] = useState('')
@@ -13,7 +14,7 @@ function Search(props) {
       author: 'author',
       subject: 'subject',
     }
-    await axios.get('https://api.airtable.com/v0/appVJkVUZWavAw5go/catalog?api_key=keyVYuxU0tZerihYZ', { fields: inputTerms })
+    await axios.get(baseURL, { fields: inputTerms }, config)
       props.setToggleFetch((prevToggleFetch) => !prevToggleFetch)
   }
 

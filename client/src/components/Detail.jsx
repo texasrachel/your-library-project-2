@@ -1,28 +1,46 @@
 import { Link } from 'react-router-dom'
 import './styling/Detail.css'
+import { useParams } from 'react-router-dom'
+import { useState, useEffect } from 'react'
 
 function Detail(props) {
-  const { title, author, subject, type, status, thoughts } = props.item.fields
+  const [book, setBook] = useState(null)
+  const { id } = useParams()
+  // console.log(props.item)
+  console.log(id)
+  
+  useEffect(() => {
+    if (id && props.items.length) {
+      const findBook = props.items.find((item) => item.id === id)
+      if (findBook) {
+        setBook(findBook)
+        // const { title, author, subject, type, status, thoughts } = book.fields
+      }
+    }
+  }, [props.items, id])
 
   return (
     <article>
-      <div className='detail'>
+      {book !== null ? 
+      (<div className='detail'>
         <div className='listing'>
-          <h3 className='title'>{title}</h3>
+          <h3 className='title'>{book.fields.title}</h3>
         </div>
         <div className='info'>
-          <p>by {author}</p>
-          <p>subject: {subject}</p>
-          <p>status: {status}</p>
-          <p>type: {type}</p>
+          <p>by {book.fields.author}</p>
+          <p>subject: {book.fields.subject}</p>
+          <p>status: {book.fields.status}</p>
+          <p>type: {book.fields.type}</p>
         </div>
         <div className='thoughts'>
-          <p>notes: {thoughts}</p>
-          <Link to={`/add/${props.item.id}`}>
+          <p>notes: {book.fields.thoughts}</p>
+          <Link to={`/add/${book.id}`}>
             Edit
           </Link>
         </div>
-      </div>
+      </div>) : 
+      <h1>Loading...</h1>
+    }
     </article>
   )
 }
