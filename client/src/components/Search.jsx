@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import React from 'react'
+import './styling/Search.css'
 
 function Search(props) {
   const [searchTerm, setSearchTerm] = useState('')
@@ -34,10 +35,10 @@ function Search(props) {
     // await axios.put(`https://api.airtable.com/v0/appVJkVUZWavAw5go/catalog?api_key=keyVYuxU0tZerihYZ/${params.id}`, { fields: newMedia })
 
   return (
-
-    <div className='search-area'>
-      <h3>Searching...</h3>
-      <form
+    <div className='search'>
+      <div className='search-area'>
+        <h2>Searching...</h2>
+        <form
         onSubmit={handleSubmit}
         className='search-form'>
         <input
@@ -56,6 +57,7 @@ function Search(props) {
         </button>
       </form>
     </div>
+  </div>
   )
 }
 

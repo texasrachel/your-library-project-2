@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios'
-import './styling/Add.css'
+import './styling/Edit.css'
 import { useParams } from 'react-router-dom'
 
 function Edit(props) {
@@ -50,6 +50,7 @@ function Edit(props) {
   
   return (
     <div className='add-area' >
+      <h1>Add media</h1>
       <form className='add-books'
       onSubmit={handleSubmit}
       >

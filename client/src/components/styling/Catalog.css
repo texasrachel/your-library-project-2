@@ -1,10 +1,13 @@
 
 .catalog {
   display: grid;
-  border: 1px solid green;
+  background-color: rgba(114,108,134,.5) ;
+  border-radius: 10px;
+  margin-top: 8em;;
 }
 .list {
   border: 1px solid darkmagenta;
+  background-color: rgba(153, 73, 118, .5);
   justify-items: center;
   align-items: stretch;
   grid-area: 2 / 1 / 4 / 3;
@@ -20,8 +23,9 @@
   gap: 5px;
 }
 .filter{
-  border: 1px solid blue;
   justify-items: start;
+  grid-column: 1fr;
   align-items: start;
-  grid-area: 2 / 3 / 4 / 3;
+  grid-area: 2 / 3 / 4 / 4;
+  background-color: rgba(153, 73, 118, .5)
 }

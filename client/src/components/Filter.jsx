@@ -5,14 +5,40 @@ import axios from 'axios'
 // import { baseURL, config } from '../services'
 
 function Filter(props) {
+
+  // const [filter, setFilter] = useState(false)
+  // return (
+  // <div>   
+  // <button onClick={() ==> setFilter(!filter)}>Author</button> 
+  //filter:id!!!
+  // <button>Subject</button>
+
+
+
   const [filter, setFilter] = useState('')
   console.log(props)
 // const params = useParams()
 const inputTerm = {
   title: 'title',
   author: 'author',
+  
   subject: 'subject',
 }
+  
+// https://www.geeksforgeeks.org/how-to-change-a-selects-options-based-on-another-dropdown-using-react/
+  
+// const changeOption = (e) => {setFilter(e.target.value)}
+  // const optionSubject = [filter for subject]
+  // const optionStatus = [filter for status]
+  // const optionAuthor = [filter for author]
+  // const optionType = [filter for type]
+  // let type = null
+  // let options = null
+// if (filter === 'Subject') {type = optionSubject} else if...
+  // if (type) {
+    // options = type.map((el) => <option key={el}>{el}</option>);}
+
+
 
   // useEffect(() => {
   //   const searchItem = props.items.find((item) => item.title === inputTerm 
@@ -43,6 +69,9 @@ const inputTerm = {
 
   return (
     <div className='filter'>
+      <button onClick='filter-1'>Filter 1st</button>
+        <p>Options</p>
+
       <form onSubmit={handleSubmit}>
         <label
           className='filter-label'
@@ -61,5 +90,6 @@ const inputTerm = {
     </div>
   )
 }
+// <select onChange=((e) => {console.log(e.target.value)}) ><option value='a'>A</option
 
 export default Filter

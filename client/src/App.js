@@ -27,17 +27,27 @@ function App() {
   return (
 <>
     <div className='App'>
-      <nav>
-        {/* id: {media.records[0].id} */}
-        <Link to='/'>Home</Link>  * | *    
-          <Link to='/edit'>Add books</Link>  * |  *   
-          <Link to='/search'>Search</Link> * | *
-          <Link to ='/catalog'>Catalog</Link>
+        <nav>
+          <ul className='nav'>
+            {/* id: {media.records[0].id} */}
+            <li>
+              <Link to='/'>Home</Link>
+            </li>
+            <li>
+            <Link to='/edit'>Add books</Link>
+            </li>
+            <li>
+          <Link to='/search'>Search</Link>
+            </li>
+            <li>
+            <Link to='/catalog'>Catalog</Link>
+            </li>
+            </ul>
       </nav>
       <div className='home-box'>
-        <div className='overlay'>
-          <div className='home-image'>
-              <h1>your library</h1>
+        <div className='home-image'>    
+          <div className='overlay'>
+            <h1>your library</h1>
           </div>
         </div>
       </div>
@@ -48,15 +58,12 @@ function App() {
             <button>Search </button>
         </Route>
         <Route path='/catalog'>
-            <h3>catalog</h3>
             <Catalog items={ items }/>
           </Route>
           <Route path='/search'>
-            <h3>search books</h3>
             <Search items={items} setToggleFetch={setToggleFetch} />
           </Route>
           <Route path='/edit'>
-            <h3>Edit books</h3>
             <Edit items={ items }/>
           </Route>
           <Route path='/detail/:id' >
