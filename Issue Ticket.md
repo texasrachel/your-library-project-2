@@ -1,14 +1,16 @@
 # PROJECT ISSUE TICKET
 
 > I cannot get my filter to work.
+>> And of course, as soon as I submit, I get the filter to work. Sort of.
 
 ## Unexpected Behavior
 
 > It's undefined.
+>> I can pull in individual items now, but I need help bringing in groups.
 
 ## Expected Behavior
 
-> to return soemthing 
+> to return something 
 
 ## Reproduce the Error
 
@@ -20,7 +22,9 @@
 3. Navigate to the landing page.
 4. Click on search, which will take you to the search page.
 5. input rec1BL3DNK9xRFJ93
+  >> input book
 6. It's undefined.
+  >> Brings back the entire array.
 ```
 
 ## Documentation
