@@ -1,48 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Andada+Pro&family=BioRhyme:wght@300;400&family=Epilogue&family=Hahmlet&family=JetBrains+Mono&family=Sora&display=swap');
+
 .App {
   text-align: center;
   margin: auto;
   width: 75%;
-  border: 1px red solid;
-  background: #eaeaea;
+  height: 100%;
+  background: rgba(156,122,141,.5) ;
+  background: linear-gradient(0deg, rgba(156,122,141,1) 0%, rgba(194,171,152,1) 100%);
   display: grid;
   grid-gap: 10px;
   grid-template-columns: 1fr;
+  background-size: auto;
 }
-
-.nav {
-  grid-template-columns: 1 ;
-  grid-template-rows: 1 ;
-  border: 1px solid darkmagenta;
+* {
+  box-sizing: border-box;
 }
-.B {
-  display: flex;
-  flex-flow: row nowrap;
+nav {
+  display: inline;
+  /* background-color:  rgba(132,114,124,1) ; */
+  padding-top: 2em;
+}
+.home-box {
   justify-content: center;
-  border: 1px solid deepskyblue;
-  text-align: center;
+  background-color: rgba(191,136, 91,1);
   margin: auto;
+  order: 1;
+  /* border: 1px solid red; */
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr auto;
+  max-width: 800px;
+  min-width: 600px;
+  position: relative;
+  height: 250px;
 }
-.C {
-  grid-template-columns: 1fr 1fr;
-  border: 1px solid darkred;
+.home-image {
+  background-image: url(./components/book-fan.jpeg);
+  background-size: cover;
+  width: 400px;
+  aspect-ratio: 16 / 9;
+  margin: auto;
+  padding: 5px;
+}
+.overlay {
+  font-size: 30px;
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  z-index: 10;
+  margin: 0;
+  letter-spacing: .1em;
+  opacity: .8;
+  /* background-color: rgba(167, 46,114,.1) ; */
+  color: rgba(156,122,141,1);
+  text-shadow: -1px -1px 1px rgba(153, 73, 118, 1) ,
+  2px 2px 2px rgba(153, 73, 118, .2);
+  }
+.home {
+  grid-template-columns: 1fr;
+  background-color:  rgba(194,171,152,1);
+  border-radius: 10px;
   padding: 10px;
   margin: 10px;
   height: 100px;
   gap: 10px;
+  text-decoration: none;
+  order: 2;
 }
 button {
-  width:140px;
-  height:50px;
+  width:100px;
+  height:30px;
   border-width: 2px;
-  border-radius: 25px;
-  background-color: red;
-  color: darkgrey;
-  box-shadow: 0px 1px 0px 0px #1c1b18;
+  border-radius: .4em;
+  background-color: rgba(114,108,134,1);
+  color: rgba(194,171,152,1);
+  box-shadow: 0px 1px 0px 0px rgba(73, 51,143,.3);
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 400;
+  margin: 20px;
+  padding: 1em 3 em;
+  text-align: center;
+  text-decoration: none;
+  font-family:monospace;
 }
-button:hover{
-  background-color: salmon;
-  color: black;
+button:hover,
+button:focus{
+  background-color: rgba(73, 51,143,.7);
+  color: (114,108,134,1);
+  box-shadow: 0 0 10px 0 #49338F;
 }
+a.button {
+  text-decoration: none;
+}
+.nav {
+  list-style: none;
+}
+.nav li {
+  display: inline;
+  margin: .7em;
+  padding: .5em;
+  border-radius: .4em;
+}
+.nav li:hover {
+  box-shadow: 0 0 10px 0 #49338F;
+}
+.nav a{
+  text-decoration: none;
+}
+<<<<<<< HEAD
 /* div b then  overlay then home-image then close div b */
 .overlay {
   position: absolute;
@@ -60,3 +125,5 @@ button:hover{
 
   
   }
+=======
+>>>>>>> testing

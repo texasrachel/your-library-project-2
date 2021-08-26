@@ -1,44 +1,57 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
-import Detail from './Detail'
+import './styling/Catalog.css'
+import { useEffect } from 'react'
+import axios from 'axios'
 
 function Catalog(props) {
-  
-  return (
-      // figure out if need to change to index instead of item. id
-      <>
-        <h3>Catalog</h3>
-        <div className='catalog'>
-          {props.media.map((item, index) => (
-            <li key={item.id}>
-              <h4>{item.id}</h4>
 
-              <Link to={`/detail/${item.id}`} item={item.id}>
-              {console.log(item.id)}
-              {/* {console.log(media.fields.title)} */}
-              <p>
-                Title: {props.media[index].fields.title}
-              </p>
-              <p>
-                Author: {props.media[index].fields.author}
-              </p>
-              <p>
-                Subject: {props.media[index].fields.subject}
-                </p>
-                <p>
-                Status: {props.media[index].fields.status}
-                </p>
-                <p>
-                Thoughts: {props.media[index].fields.thoughts}
-              </p>
-              </Link>   
-            </li>
-            )
-        )}
-        <h1>filter</h1>
-        </div>
-      </>
-    )
+  const handleSubmit = async (e) => {
+    e.preventDefault()  
+    await axios.get('https://api.airtable.com/v0/appVJkVUZWavAw5go/catalog?api_key=keyVYuxU0tZerihYZ/')
   }
-export default Catalog
 
+  return (
+    <>
+      <div className='catalog'>
+        <div className='filter'>
+          <div className='filter'>
+      <form onSubmit={handleSubmit}>
+        <label
+          className='filter-label'
+        >
+          Filter (items=items)
+        </label>
+        {/* <select className='filter-label'>
+          <option selected value='subject'>Subject</option>
+          <option value='status'>Status</option>
+        </select> */}
+      </form>
+      <Link>
+        <button>Filter by Author</button>
+      </Link>
+      <Link>
+        <button>Filter by Subject</button>
+      </Link>
+      <Link>
+        <button>Filter by Type</button>
+      </Link>
+      <Link>
+        <button>Filter by Status with Links to /:id</button>
+      </Link>
+    </div>
+        </div>
+        <div className='list'>
+          {props.items.map((item, index) => {
+            return (
+              <Link to={`/detail/${item.id}`} >
+                Title: {item.fields.title}
+              </Link>
+            )
+          })}
+        </div>
+        </div>
+      </> 
+  )
+}
+
+export default Catalog

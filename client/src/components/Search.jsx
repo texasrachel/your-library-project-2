@@ -1,90 +1,45 @@
-import { useState } from 'react'
-import axios from 'axios'
-import { baseURL, config } from '../services'
+import { useState, useEffect } from 'react'
+import React from 'react'
+import './styling/Search.css'
 
 function Search(props) {
   const [searchTerm, setSearchTerm] = useState('')
-  const newMedia = {
-    title: 'title',
-    author: 'author',
-    subject: 'subject',
-    currentStatus: 'currentStatus'
-  }
+  const { author, subject, status, type } = props.items
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault()
-    await axios.post(baseURL, { fields: newMedia }, config)
-    props.setToggleFetch((prevToggleFetch) => !prevToggleFetch)
+    const searchResults = props.items.filter((item) => {
+      const {title, author, subject, type} = item.fields
+      console.log(title, subject, type)
+      return title.toLowerCase().includes(searchTerm.toLowerCase()) || author.toLowerCase().includes(searchTerm.toLowerCase()) || subject.toLowerCase().includes(searchTerm.toLowerCase()) || type.toLowerCase() === searchTerm.toLowerCase()
+    });
+    props.setFilteredBooks(searchResults)
   }
-
 
   return (
     <div className='search'>
-      <p>Searching...</p>
-      <form onSubmit={handleSubmit} className='search-form'>
+      <div className='search-area'>
+      <h3>Search...</h3>
+      <form
+        onSubmit={handleSubmit}
+        className='search-form'>
         <input
           className='search-input'
           id='searchTerm'
           type='text'
           value={searchTerm}
-          placeholder='author, title, or subject'
-          autocomplete='off'
+          placeholder='author, subject, status, or type'
           onChange={(e) =>
             setSearchTerm(e.target.value)} />
-        <input
+        <button
           type='submit'
-          value='search catalog'
-          className='search-button'/>
-      </form>
-    </div>
+          className='search-button'>
+        search
+        </button>
+      </form>    
+    </div> 
+  </div>
   )
 }
 
 export default Search
-
-
-// do i need individual searches or can i do one search and assign it multiple times?
-
-// const [title, setTitle] = useState('')
-// const [author, setAuthor] = useState('')
-// const [subject, setSubject] = useState('')
-// if (searchTerm) {
-// setTitle(searchTerm.----fields.title-----)
-// setAuthor(searchTerm.----fields.author----)
-// setSubject(searchTerm.----fields.subject---)}
-
-// props.setSearchTerm({
-//   author: author,
-//   title: title,
-//   subject: subject
-// })
-
-// useEffect(() => {
-//   setInputSearch(`test ${searchMedia}`)
-//   return () => {
-//     console.log('input something')
-//   }
-// }, [searchMedia])
-
-// new variable for searching through catalog
-// const searchValue = {
-//   title,
-//   author,
-//   subject,
-// }
-
-  // const searchValue = ('')
-
-  // useEffect(() => {
-  //   if (searchValue !== null) {
-  //     setSearchTerm(searchTerm)
-  //   }
-  // }, [searchTerm])
-
-// on submit set the inputted value as term for each search term
-
-// props.setNewSearch(searchTerm)
-// console.log('clicked me')
-// setSearchTerm('')
-// }
-// console.log(setSearchTerm)

@@ -1,43 +1,48 @@
-import { useEffect, useState } from 'react'
-import axios from 'axios'
-import { baseURL, config } from '../services';
-import React from 'react'
- 
+import { Link } from 'react-router-dom'
+import './styling/Detail.css'
+import { useParams } from 'react-router-dom'
+import { useState, useEffect } from 'react'
+
 function Detail(props) {
-  console.log(props.media)
-  // const { title, author, subject, currentStatus, thoughts, id} = props.media
-  console.log({ props })
-
-  const [item, setItem] = useState([])
-
+  const [book, setBook] = useState(null)
+  const { id } = useParams()
+  // console.log(props.item)
+  // console.log(id)
+  
   useEffect(() => {
-    const getOne = async () => {
-      const res = await axios.get(`${baseURL}/{key}`, config)
-      setItem(res.data)
-      // console.log(res.data)
-        // https://api.airtable.com/v0/app0vrHmHR45kdrtT/catalog/%7Bkey%7D
+    if (id && props.items.length) {
+      const findBook = props.items.find((item) => item.id === id)
+      if (findBook) {
+        setBook(findBook)
+        // const { title, author, subject, type, status, thoughts } = book.fields
+      }
     }
-    getOne()
-  }, [item] )
+  }, [props.items, id])
 
   return (
-    <div className='detail' >
-      <p>Detail</p>
-      {/* <div className='info'> 
-      <h2>Title: {props.media.title}</h2>
-      <h3>by Author: {props.author}</h3>
-      <p>Subject: {props.subject}</p>
-      <p>Type: {props.type}</p>
-      </div>
-      <div className="thoughts">
-      <p>{props.thoughts}</p>
-      </div> */}
-    </div>
+    <article>
+      {book !== null ? 
+      (<div className='detail'>
+        <div className='listing'>
+          <h3 className='title'>{book.fields.title}</h3>
+        </div>
+        <div className='info'>
+          <p>by {book.fields.author}</p>
+          <p>subject: {book.fields.subject}</p>
+          <p>status: {book.fields.status}</p>
+          <p>type: {book.fields.type}</p>
+        </div>
+        <div className='thoughts'>
+          <p>notes: {book.fields.thoughts}</p>
+          <Link to={`/edit/${book.id}`}>
+            Edit
+          </Link>
+        </div>
+      </div>) : 
+      <h1>Loading...</h1>
+    }
+    </article>
   )
 }
 
 export default Detail
-
-// //li key={index}>
-// {/* <Link to={`/detail/${props.media[index].id}`} media={media}> */}
-//   {/* Title: {props.media[index].fields.title} */}

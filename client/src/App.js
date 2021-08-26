@@ -1,74 +1,85 @@
-import axios from 'axios'
-import { baseURL, config } from './services';
 import './App.css'
-import { useState, useEffect } from 'react'
-import React from 'react';
-import Catalog from './components/Catalog'
-import Add from './components/Add'
-import Search from './components/Search'
+import axios from 'axios'
+import React, { useState, useEffect } from 'react'
+import { Route, Link } from 'react-router-dom'
+// import { baseURL, config } from './services'
+import Edit from './components/Edit'
 import Detail from './components/Detail'
-import { Route, NavLink, Switch } from 'react-router-dom'
+import Catalog from './components/Catalog'
+import Search from './components/Search'
 
 function App() {
-  const [media, setMedia] = useState([])
-  const [newSearch, setNewSearch] = useState('')
-  // const mediaArray = { media.map(indivMedia, index)}
+  const [items, setItems] = useState([])
+  const [toggleFetch, setToggleFetch] = useState(false)
+  const [filteredBooks, setFilteredBooks] = useState([])
 
   useEffect(() => {
     const getMedia = async () => {
-      const res = await axios.get(baseURL, config)
-      setMedia(res.data.records)
-      console.log(res.data.records)
+      const res = await axios.get('https://api.airtable.com/v0/appVJkVUZWavAw5go/catalog?api_key=keyVYuxU0tZerihYZ')
+      setItems(res.data.records)
     }
     getMedia()
-    // console.log(setMedia)
   }, [])
-
+  
   return (
-    // do i need switch with the route? think so bc of indiv pages
+<>
     <div className='App'>
-      <h1>your library</h1>
-        <div className='A' >
-          <NavLink exact activeClassName='active' to='/'>
-            Home
-          </NavLink>
-          {' * '}
-          <NavLink activeClassName='active' to='/catalog'>
-            Catalog
-          </NavLink>
-          {' * '}
-          <NavLink to='/add'>
-            Add Media
-          </NavLink>
-          {' * '}
-          <NavLink activeClassName='active' to='/search'>
-            Search
-          </NavLink>
-        <Switch>
+        <nav>
+          <ul className='nav'>
+            <li>
+              <Link to='/'>Home</Link>
+            </li>
+            <li>
+            <Link to='/edit'>Add books</Link>
+            </li>
+            <li>
+          <Link to='/search'>Search</Link>
+            </li>
+            <li>
+            <Link to='/catalog'>Catalog</Link>
+            </li>
+            </ul>
+      </nav>
+      <div className='home-box'>
+        <div className='home-image'>    
+          <div className='overlay'>
+            <h1>your library</h1>
+          </div>
+        </div>
+      </div>
+      <div className='home'>
           <Route path='/' exact>
-            <App />
-          </Route>
-          <Route path='/catalog'>
-            <Catalog media={media} />
-          </Route>
-          <Route path='/add' >
-            <Add />
+            <Link to='/catalog'>
+              <button type='button'>Catalog</button>
+            </Link>
+            <Link to='/edit'>
+              <button type='button'>Add</button>
+            </Link>
+            <Link to='/search'>
+              <button type='button'>Search</button>
+            </Link>
+        </Route>
+        <Route path='/catalog'>
+            <Catalog items={ items }/>
           </Route>
           <Route path='/search'>
-            <Search setNewSearch={ setNewSearch }/>
+            <Search
+              items={items}
+              setFilteredBooks={setFilteredBooks}
+            />
+            {filteredBooks.length && <Catalog items={filteredBooks} />}
           </Route>
-          <Route detail='/detail/:id'>
-            <Detail media={media}  />
+          <Route path='/edit'>
+            <Edit items={ items }/>
           </Route>
-        </Switch>
-        {/* <button>Catalog</button>
-        <button>Search</button>
-        <button>Add Media</button> */}
+          <Route path='/detail/:id' >
+            <Detail items={items}  />
+          </Route>
       </div>
     </div>
+</>
   )
 } 
 
 export default App
 
-// unending api calls again.
