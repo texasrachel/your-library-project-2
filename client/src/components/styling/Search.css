@@ -1,24 +1,4 @@
 
-.nav {
-  border: 1px solid darkmagenta;
-  grid-area: 1 / 1 / 2 / 6;
-  justify-self: center;
-  z-index: 3;
-}
-
-button {
-  width:140px;
-  height:50px;
-  border-width: 2px;
-  border-radius: 25px;
-  background-color: red;
-  color: darkgrey;
-  box-shadow: 0px 1px 0px 0px #1c1b18;
-}
-button:hover{
-  background-color: salmon;
-  color: black;
-}
 .search {
   border: 1px aqua solid;
   display: grid;

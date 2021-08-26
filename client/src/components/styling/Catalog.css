@@ -1,10 +1,4 @@
 
-.nav {
-  border: 1px solid darkmagenta;
-  grid-area: 1 / 1 / 1 / 4;
-  justify-self: center;
-}
-
 .catalog {
   display: grid;
   border: 1px solid green;

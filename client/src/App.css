@@ -1,7 +1,4 @@
-@@font-face{
 
-url('https://fonts.googleapis.com/css2?family=Andada+Pro&family=BioRhyme:wght@300;400&family=Epilogue&family=Hahmlet&family=JetBrains+Mono&family=Sora&display=swap')
-} 
 .App {
   text-align: center;
   margin: auto;
@@ -11,37 +8,28 @@ url('https://fonts.googleapis.com/css2?family=Andada+Pro&family=BioRhyme:wght@30
   display: grid;
   grid-gap: 10px;
   grid-template-columns: 1fr;
-
-
 }
-
-.nav {
-  grid-template-columns: 1 ;
-  grid-template-rows: 1 ;
+nav {
+  display: inline;
   border: 1px solid darkmagenta;
+  padding-top: 2em;
 }
-.B {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  border: 1px solid deepskyblue;
-  text-align: center;
-  margin: auto;
-}
-.C {
-  grid-template-columns: 1fr 1fr;
-  border: 1px solid darkred;
+.home {
+  grid-template-columns: 1fr;
+  background-color: slateblue;
   padding: 10px;
   margin: 10px;
   height: 100px;
   gap: 10px;
+  text-decoration: none;
+  order: 2;
 }
 button {
-  width:140px;
-  height:50px;
+  width:100px;
+  height:20px;
   border-width: 2px;
   border-radius: 25px;
-  background-color: red;
+  background-color: pink;
   color: darkgrey;
   box-shadow: 0px 1px 0px 0px #1c1b18;
 }
@@ -49,21 +37,33 @@ button:hover{
   background-color: salmon;
   color: black;
 }
-/* div b then  overlay then home-image then close div b */
+
+.home-box {
+  justify-content: center;
+  background-color: lightsalmon;
+  margin: auto;
+  order: 1;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr auto;
+  max-width: (800px);
+  min-width: (800px);
+}
 .overlay {
-  position: absolute;
-  font-size: 50px;
+  font-size: 30px;
   z-index: 10;
   text-align: center;
-  padding: 150px 0px 0px 150px;
+  justify-self: center;
   border: 1px yellow solid;
-  align-items: center;
+  align-self: end;
   margin: 0;
   background-color:rgba(0,0,0,.4);
   color: #f2f2f2;
-  text-shadow: 4px 4px 4px #aaa;
+  text-shadow: 2px 2px 2px #aaa;
+  width: 400px;
+  aspect-ratio: 16 / 9;
   }
-  .home-image {
-
-  
-  }
+.home-image {
+    border: 1px solid indianred;
+    background-image: url(./components/book-fan.jpeg);
+    background-size: cover;
+}

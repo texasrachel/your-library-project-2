@@ -1,46 +1,81 @@
-import axios from 'axios'
-import { baseURL, config } from './services';
+
 import './App.css'
+import axios from 'axios'
 import { useState, useEffect } from 'react'
-import React from 'react';
-import Catalog from './components/Catalog'
-import Add from './components/Add'
-import Search from './components/Search'
+import { Route, Link } from 'react-router-dom'
+import React from 'react'
+import Main from './components/Main'
 import Detail from './components/Detail'
-import { Route, NavLink, Switch } from 'react-router-dom'
+import Catalog from './components/Catalog'
+import Search from './components/Search'
+// import Filter from './components/Filter'
 
 function App() {
-  const [media, setMedia] = useState([])
-  const [newSearch, setNewSearch] = useState('')
-  // const mediaArray = { media.map(indivMedia, index)}
+  const [items, setItems] = useState([])
+  const [toggleFetch, setToggleFetch] = useState(false)
 
   useEffect(() => {
     const getMedia = async () => {
-      const res = await axios.get(baseURL, config)
-      setMedia(res.data.records)
-      console.log(res.data.records)
+      const res = await axios.get("https://api.airtable.com/v0/appVJkVUZWavAw5go/catalog?api_key=keyVYuxU0tZerihYZ")
+      console.log(res.data)
+      setItems(res.data.records)
     }
     getMedia()
-    // console.log(setMedia)
   }, [])
-
+  
   return (
-    // do i need switch with the route? think so bc of indiv pages
+<>
     <div className='App'>
-      <h1>your library</h1>
-        <div className='A' >
-        <Catalog media={media} />
-        <Add media={media} />
-        <Search media={media} />
-        <Detail media={ media } />
-        {/* <button>Catalog</button>
-        <button>Search</button>
-        <button>Add Media</button> */}
+      <nav>
+        {/* id: {media.records[0].id} */}
+        <Link to='/'>Home</Link>  * | *    
+          <Link to='/detail'>Add books</Link>  * |  *   
+          <Link to='/search'>Search</Link> * | *
+          <Link to ='/catalog'>Catalog</Link>
+      </nav>
+      <div className='home-box'>
+        <div className='overlay'>
+          <div className='home-image'>
+              <h1>your library</h1>
+          </div>
+        </div>
+      </div>
+      <div className='home'>
+        <Route path='/' exact>
+            <h3>List </h3>
+            <h3>add </h3>
+            <h3>Search </h3>
+        </Route>
+        <Route path='/catalog'>
+            <h3>catalog</h3>
+            <Catalog items={ items }/>
+          </Route>
+          <Route path='/search'>
+            <h3>search books</h3>
+            <Search items={items} setToggleFetch={setToggleFetch} />
+          </Route>
+          <Route path='/detail'>
+            <h3>add new books</h3>
+            <Detail />
+          </Route>
+          <Route path='/add/:id'>
+            <h3>Edit books</h3>
+            <Detail items={ items }/>
+          </Route>
+        <Route path='/detail/:id'>
+            <h3>individual books</h3>
+            <Detail
+              // key={index}
+            />
+          </Route>
+          <Route path='/filter'>
+            {/* <Filter /> */}
+          </Route>
       </div>
     </div>
+</>
   )
 } 
 
 export default App
 
-// unending api calls again.
