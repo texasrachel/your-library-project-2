@@ -4,36 +4,37 @@ import './styling/Search.css'
 
 function Search(props) {
   const [searchTerm, setSearchTerm] = useState('')
-  
-  const { subject, title } = props.items
+  const { author, subject, status, type } = props.items
 
-  console.log(props.items)
+  // console.log(props.items)
 
-  useEffect(() => {
-    const searchResults = props.items.filter(function (item) {
-      // return item.id == 'rec1BL3DNK9xRFJ93';
-      return item.fields.title == 'the grinch';
-      // }).map(function({title}){
-      //     return {title};
+  // useEffect(() => {
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    
+    const searchResults = props.items.filter((item) => {
+      const {title, author, subject, type} = item.fields
+      console.log(title, subject, type)
+      return title.toLowerCase().includes(searchTerm.toLowerCase()) || author.toLowerCase().includes(searchTerm.toLowerCase()) || subject.toLowerCase().includes(searchTerm.toLowerCase()) || type.toLowerCase() === searchTerm.toLowerCase()
     });
-    console.log(searchResults)
-  },[])
+    props.setFilteredBooks(searchResults)
+  }
+    // , [])
 
   return (
     <div className='search'>
       <div className='search-area'>
       <h3>Search...</h3>
-
       <form
-        // onSubmit={handleSubmit}
+        onSubmit={handleSubmit}
         className='search-form'>
         <input
           className='search-input'
           id='searchTerm'
           type='text'
           value={searchTerm}
-          placeholder='author, title, or subject'
-          autocomplete='off'
+          placeholder='author, subject, status, or type'
+          // autocomplete='off'
           onChange={(e) =>
             setSearchTerm(e.target.value)} />
         <button

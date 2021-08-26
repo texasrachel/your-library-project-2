@@ -8,17 +8,16 @@ import Edit from './components/Edit'
 import Detail from './components/Detail'
 import Catalog from './components/Catalog'
 import Search from './components/Search'
-// import Filter from './components/Filter'
-
 
 function App() {
   const [items, setItems] = useState([])
   const [toggleFetch, setToggleFetch] = useState(false)
+  const [filteredBooks, setFilteredBooks] = useState([])
 
   useEffect(() => {
     const getMedia = async () => {
       const res = await axios.get('https://api.airtable.com/v0/appVJkVUZWavAw5go/catalog?api_key=keyVYuxU0tZerihYZ')
-      console.log(res.data)
+      // console.log(res.data)
       setItems(res.data.records)
     }
     getMedia()
@@ -63,8 +62,10 @@ function App() {
           <Route path='/search'>
             <Search
               items={items}
+              setFilteredBooks={setFilteredBooks}
               // setToggleFetch={setToggleFetch}
             />
+            {filteredBooks.length && <Catalog items={filteredBooks} />}
           </Route>
           <Route path='/edit'>
             <Edit items={ items }/>

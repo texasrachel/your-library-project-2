@@ -1,17 +1,3 @@
-"rec1BL3DNK9xRFJ93"
-
-let filteredPeople = people.filter(function (currentElement) {
-  // the current value is an object
-  // so you can check on its properties
-  return currentElement.country === "America" 
-    && currentElement.age < 25;
-});
-console.log(filteredPeople);
-
-let usersOnline = this.state.users.filter(user => {
-      return user.online === true;  /* can use just - (return user.online),
-                                       put for your  reference. */
-    }) ; 
 
 /* filters through the Array - 'users' which is present in the 
 'state' and returns only those users which has 'online' property with 
