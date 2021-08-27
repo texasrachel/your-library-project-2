@@ -7,9 +7,9 @@ and (max-device-width: 667px) {
   float: none;
   width: 100%;
 }
-.search-input {
-  width: 100px;
-}
+  .search-input {
+    width: 100px;
+  }
 }
 
 .App {
