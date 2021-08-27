@@ -15,6 +15,7 @@ useEffect(() => {
     const findBook = props.items.find((item) => item.type === type)
     if (findBook) {
       setBook(findBook)
+      console.log(setBook)
     }
   }
 }, [props.items, type])
