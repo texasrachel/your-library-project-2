@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import './styling/Catalog.css'
-import { useEffect } from 'react'
+// import { useEffect } from 'react'
 import axios from 'axios'
 
 function Catalog(props) {

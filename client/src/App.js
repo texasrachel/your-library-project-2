@@ -10,7 +10,7 @@ import Search from './components/Search'
 
 function App() {
   const [items, setItems] = useState([])
-  const [toggleFetch, setToggleFetch] = useState(false)
+  // const [toggleFetch, setToggleFetch] = useState(false)
   const [filteredBooks, setFilteredBooks] = useState([])
 
   useEffect(() => {
