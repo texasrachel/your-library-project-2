@@ -1,10 +1,10 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import React from 'react'
 import './styling/Search.css'
 
 function Search(props) {
   const [searchTerm, setSearchTerm] = useState('')
-  const { author, subject, status, type } = props.items
+  // const { author, subject, status, type } = props.items
 
   const handleSubmit = (e) => {
     e.preventDefault()
