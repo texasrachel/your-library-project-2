@@ -7,7 +7,7 @@ import Edit from './components/Edit'
 import Detail from './components/Detail'
 import Catalog from './components/Catalog'
 import Search from './components/Search'
-import Search2 from './components/Search2'
+// import Search2 from './components/Search2'
 
 function App() {
   const [items, setItems] = useState([])
@@ -39,10 +39,8 @@ function App() {
             <li>
             <Link to='/catalog'>Catalog</Link>
             </li>
-            <li>
-            <h1 className='title'>your library</h1>
-            </li>
-            </ul>
+          </ul>
+        <h1 className='title'>your library</h1>
       </nav>
       <div >
         <div className='home-image'>    
@@ -77,13 +75,13 @@ function App() {
             <Detail items={items}  />
           </Route>
           
-          <Route path='/search2'>
+          {/* <Route path='/search2'>
             <Search2
               items={items}
               setFilteredBooks={setFilteredBooks}
             />
-            {/* {filteredBooks.length && <Catalog items={filteredBooks} />} */}
-          </Route>
+            {/* {filteredBooks.length && <Catalog items={filteredBooks} />} 
+          </Route> */}
       </div>
     </div>
 </>

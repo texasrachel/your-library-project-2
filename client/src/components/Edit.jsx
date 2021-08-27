@@ -51,7 +51,9 @@ function Edit(props) {
   
   return (
     <div className='add-area' >
-      <h1>Add media</h1>
+      <div className='edit-name'>
+        <h1>Add media</h1>
+        </div>
       <form className='add-books'
       onSubmit={handleSubmit}
       >
@@ -117,14 +119,14 @@ function Edit(props) {
             id='status'
             onChange={(e) => setStatus(e.target.value)}
           />
-          <br />
+          <br /> 
           <label  className='add-input-11'
-            htmlFor='type'>thoughts:
+            htmlFor='type'>Notes:
           </label>
           <input 
             type='type'
             className='add-input-12'
-            placeholder='thoughts: '
+            placeholder='notes: '
             value={thoughts}
             id='thoughts'
             onChange={(e) => setThoughts(e.target.value)}
