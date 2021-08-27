@@ -56,17 +56,17 @@ your library is an app for tracking your personal library catalog. It is built o
 
 #### MVP
 
-- [ ] Navigation component with links for other components <!--(component 1) -->
-- [ ] Pull entire catalog from Airtable  <!--(axios get) --> 
-	- [ ] and search through with user-inputted information <!--(component 2) -->
-	- [ ] or render catalog on page  <!--(component 3) -->
-		- [ ] on rendered page, filter catalog by author, subject, type, or status  <!--(component 4) -->
-	- [ ] return information about filtered media  <!--(component 5) -->
+- [ x ] Navigation component with links for other components <!--(component 1) -->
+- [ x ] Pull entire catalog from Airtable  <!--(axios get) --> 
+	- [ x ] and search through with user-inputted information <!--(component 2) -->
+	- [ x ] or render catalog on page  <!--(component 3) -->
+		- [ x ] on rendered page, filter catalog by author, subject, type, or status  <!--(component 4) -->
+	- [ x ] return information about filtered media  <!--(component 5) -->
 	<!-- what to do about multiple returns - if...indiv...else...catalog?filtered? -->
-- [ ] Component to add media to catalog  <!--(axios post & component 6) -->
-- [ ] Component to add thoughts to individual pages which can be accessed on the individual media page or the add media page <!--(axios put & component 7) -->
-- [ ] Responsive for mobile
-- [ ] Deployed to Netlify
+- [ x ] Component to add media to catalog  <!--(axios post & component 6) -->
+- [ x ] Component to add thoughts to individual pages which can be accessed on the individual media page or the add media page <!--(axios put & component 7) -->
+- [ x ] Responsive for mobile
+- [ x ] Deployed to Netlify
 
 #### PostMVP
 
@@ -90,30 +90,30 @@ your library is an app for tracking your personal library catalog. It is built o
 | August 19 | Prompt / Wireframes / Airtable API / GitHub | Yes |
 | August 20 | Hierarchy / Readme / Project Approval | Yes  |
 | August 21 | Core Application Structure - HTML, CSS / Pseudocode / React App | Yes |
-| August 22 | Components / Axios integration |  |
-| August 23 | Responsive & CSS Styling / Deploy to Netlify | |
-| August 24 | MVP |  |
-| August 25 | Debugging |  |
-| August 26 | Clean-up Code |  |
-| August 27 | Presentations |  |
+| August 22 | Components / Axios integration | Yes  |
+| August 23 | Responsive & CSS Styling / Deploy to Netlify |Yes  |
+| August 24 | MVP |  Yes  |
+| August 25 | Debugging |  Yes  |
+| August 26 | Clean-up Code |  Yes  |
+| August 27 | Presentations |  Yes  |
 
 ## Timeframes
 
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 |--|:--:|:--:|:--:|:--:|
-| Setup basic app | M | 3hrs | 2 |  |
-| Setup basic React App & folder structure | H | 4hrs |  |  |
-| Styling | M | 3hrs |  |  |
-| Axios call to Airtable & render catalog | H | 3hrs |   |  |
-| Filter catalog component with Airtable filtering | H | 4hrs |  |  |
-| Search catalog & axios get | H | 4hrs |  |  |
-| Individual detail component | H | 2hrs |  |  |
-| Add book component & axios post | H | 3hrs |  |  |
-| Add thought component & axios put | H | 3hrs |  |  |
-| Navigation component | M | 2hrs |  |  |
-| Responsiveness | M | 3hrs |  |  |
-| Deployment | H | 2hrs |  |  |
-| Total | 36 | hrs |  |  |
+| Setup basic app | M | 3hrs | 2hrs | 2hrs |
+| Setup basic React App & folder structure | H | 4hrs | 5hrs | 7hrs  |
+| Styling | M | 3hrs | 5hrs  | 12hrs |
+| Axios call to Airtable & render catalog | H | 3hrs | 3hrs  | 15hrs  |
+| Filter catalog component with Airtable filtering | H | 4hrs | N/A<br> part of Search component  |  |
+| Search catalog & axios get | H | 4hrs | 6.5hr  | 21.5hrs |
+| Individual detail component | H | 2hrs | 3hr  | 24.5hrs  |
+| Add book component & axios post | H | 3hrs | 3hrs  | 27.5hrs |
+| Add thought component & axios put | H | 3hrs | 3hrs  | 30.5hrs  |
+| Navigation component | M | 2hrs | 5hr  | 35.5hrs  |
+| Responsiveness | M | 3hrs | 2hr  | 37.5hrs |
+| Deployment | H | 2hrs | 1hr | 38.5hrs  |
+| Total | 36 | hrs | 38.5hrs | 38.5hrs  |
 
 ## SWOT Analysis
 

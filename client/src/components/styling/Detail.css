@@ -1,11 +1,23 @@
 
 .detail {
   display: grid; 
-  grid-template-columns: repeat(5, 1fr); 
-  grid-template-rows: 0.5fr repeat(4, 1fr); 
+  grid-template-columns: 3fr 1fr; 
+  grid-template-rows: 20px repeat(4, 1fr); 
   gap: 10px;
+  color: #2e2b32;
   border-radius: 10px;
   background-color: rgba(114,108,134,.5) ;
+  font-size: 1.5em;
+  border: 1px dashed black;
+  font-family: 'Special Elite', cursive;
+  height: 50vh;
+}
+.title-class {
+  background-color: rgba(114,108,134,.5) ;
+  padding: 10px 0 10px 0;
+  font-family: 'Merienda', cursive;
+  border: rgba(114,108,134,.2) 1px solid;
+  box-shadow: 0px 2px 2px 0px #715c7b;
 }
 .info {
   font-size: 15px;
@@ -13,21 +25,44 @@
   text-align: start;
   align-self: start; 
   grid-area: 3 / 1 / 6 / 3; 
-  padding-left: 10px;
+  padding: 40px 0 0 20px;
+  font-size: .8em;
 }
 .thoughts {
-  border: 1px solid rgba(114,108,134,.9) ;
   justify-self: start; 
   align-self: start; 
   grid-area: 3 / 3 / 4 / 4; 
   z-index: 7;
-  background-color: rgba(114,108,134,.2) ;
+  /* background-color: rgba(114,108,134,.2) ; */
+  min-width: 150px;
+  min-height: 200px;
+  font-size: .8em;
+  padding: 40px 0 40px 0;
+
+}
+.edit-class {
+  background-color: rgba(114,108,134,.5) ;
+  border: rgba(114,108,134,.2) 1px solid;
+  box-shadow: 0px 2px 2px 0px #715c7b;
+  border-radius: 15px;
+  padding: 15px;
+  text-decoration: none;
+}
+.edit-class:hover,
+.edit-class:focus{
+  background-color: #715c7b;
+  color: #2e2b32;
+  border: rgba(114,108,134,.2) 1px solid; 
+  box-shadow: 0px 2px 2px 0px #715c7b;
+}
+.info-class {
+  padding: 0 0 0 20px;
+  font-size: .75em;
 }
 .listing {
-
   grid-area: 2 / 1 /6 / 6;
 }
-.title {
+.title-show {
   grid-area: 2 / 1 / 3 / 6;
   justify-self: center; 
   align-self: end; 

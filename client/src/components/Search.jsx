@@ -34,7 +34,7 @@ function Search(props) {
         <button
           type='submit'
           className='search-button'>
-        search
+        Search
         </button>
       </form>    
     </div> 

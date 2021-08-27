@@ -2,11 +2,12 @@ import './App.css'
 import axios from 'axios'
 import React, { useState, useEffect } from 'react'
 import { Route, Link } from 'react-router-dom'
-// import { baseURL, config } from './services'
+import { baseURL, config } from './services'
 import Edit from './components/Edit'
 import Detail from './components/Detail'
 import Catalog from './components/Catalog'
 import Search from './components/Search'
+import Search2 from './components/Search2'
 
 function App() {
   const [items, setItems] = useState([])
@@ -15,7 +16,7 @@ function App() {
 
   useEffect(() => {
     const getMedia = async () => {
-      const res = await axios.get('https://api.airtable.com/v0/appVJkVUZWavAw5go/catalog?api_key=keyVYuxU0tZerihYZ')
+      const res = await axios.get(baseURL, config)
       setItems(res.data.records)
     }
     getMedia()
@@ -38,13 +39,13 @@ function App() {
             <li>
             <Link to='/catalog'>Catalog</Link>
             </li>
+            <li>
+            <h1 className='title'>your library</h1>
+            </li>
             </ul>
       </nav>
-      <div className='home-box'>
+      <div >
         <div className='home-image'>    
-          <div className='overlay'>
-            <h1>your library</h1>
-          </div>
         </div>
       </div>
       <div className='home'>
@@ -74,6 +75,14 @@ function App() {
           </Route>
           <Route path='/detail/:id' >
             <Detail items={items}  />
+          </Route>
+          
+          <Route path='/search2'>
+            <Search2
+              items={items}
+              setFilteredBooks={setFilteredBooks}
+            />
+            {/* {filteredBooks.length && <Catalog items={filteredBooks} />} */}
           </Route>
       </div>
     </div>

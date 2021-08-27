@@ -23,20 +23,24 @@ function Detail(props) {
     <article>
       {book !== null ? 
       (<div className='detail'>
-        <div className='listing'>
-          <h3 className='title'>{book.fields.title}</h3>
-        </div>
-        <div className='info'>
+          <div className='listing'>
+          <div className='title-class'>
+          <h3 className='title-show'>{book.fields.title}</h3>
+            </div>
+            </div>
+          <div className='info'>
+
           <p>by {book.fields.author}</p>
           <p>subject: {book.fields.subject}</p>
-          <p>status: {book.fields.status}</p>
-          <p>type: {book.fields.type}</p>
+          <p className='info-class'>status: {book.fields.status}</p>
+              <p className='info-class'>type: {book.fields.type}</p>
+              
         </div>
-        <div className='thoughts'>
+          <div className='thoughts'>
           <p>notes: {book.fields.thoughts}</p>
-          <Link to={`/edit/${book.id}`}>
+          <Link className='edit-class' to={`/edit/${book.id}`}>
             Edit
-          </Link>
+              </Link>
         </div>
       </div>) : 
       <h1>Loading...</h1>
